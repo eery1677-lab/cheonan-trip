@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
-    body { font-family: 'Pretendard', sans-serif; }
+    body { font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif; }
   </style>
 </head>
 <body class="bg-slate-100 text-slate-800 min-h-screen flex flex-col items-center">
@@ -48,7 +48,7 @@
         <i class="fa-solid fa-train"></i> 아빠 KTX
       </button>
       <button onclick="switchTab('food')" id="tab-food" class="flex-1 py-3.5 text-center text-slate-400 border-b-2 border-transparent transition flex items-center justify-center gap-1.5">
-        <i class="fa-solid fa-utensils"></i> 맛집
+        <i class="fa-solid fa-utensils"></i> 맛집·카페
       </button>
       <button onclick="switchTab('links')" id="tab-links" class="flex-1 py-3.5 text-center text-slate-400 border-b-2 border-transparent transition flex items-center justify-center gap-1.5">
         <i class="fa-solid fa-bookmark"></i> 시설/예약
@@ -59,7 +59,7 @@
       <div class="bg-sky-50 border border-sky-200 rounded-xl p-3.5 text-xs text-sky-800 flex items-start gap-2.5">
         <i class="fa-solid fa-circle-info text-sky-600 text-base mt-0.5"></i>
         <div>
-          <strong>여행 요약:</strong> 아빠는 일요일 힐링 후 월요일 아침 KTX로 전주 출근, 엄마와 세 아이는 월요일 워터파크 정복!
+          <strong>여행 요약:</strong> 아빠는 일요일 힐링 후 월요일 KTX 출근! 엄마와 세 아이는 월요일 워터파크 정복 후 3일차 천안 명물 디저트 투어!
         </div>
       </div>
 
@@ -85,7 +85,7 @@
           </div>
           <div class="flex gap-2.5">
             <span class="font-bold text-slate-800 shrink-0 w-12">18:30</span>
-            <span>온 가족 삼겹살/갈비 파티 & 아빠 응원 저녁</span>
+            <span>온 가족 삼겹살/갈비 파티 & 아빠 환송 저녁 식사</span>
           </div>
           <div class="flex gap-2.5">
             <span class="font-bold text-slate-800 shrink-0 w-12">20:30</span>
@@ -109,7 +109,7 @@
           <div class="flex gap-2.5">
             <span class="font-bold text-slate-800 shrink-0 w-12">10:30</span>
             <div>
-              <strong>오션어드벤처 입장!</strong> (월요일이라 쾌적)
+              <strong>오션어드벤처 입장!</strong> (월요일이라 한산)
               <p class="text-[11px] text-slate-500 mt-0.5">· 중1: 토네이도풀, 와일드 슬라이드<br/>· 초5/초2: 파도풀, 유수풀, 실내 바데풀</p>
             </div>
           </div>
@@ -119,7 +119,7 @@
           </div>
           <div class="flex gap-2.5">
             <span class="font-bold text-rose-600 shrink-0 w-12">18:30</span>
-            <span><strong>2일차 저녁 특식</strong> (선유원 참나무 석갈비 추천)</span>
+            <span><strong>2일차 저녁 특식</strong> (선유원 참나무 석갈비 또는 우목정)</span>
           </div>
         </div>
       </div>
@@ -130,19 +130,32 @@
           <span class="text-xs font-extrabold text-emerald-600 tracking-wider">DAY 3 · 9월 8일(화)</span>
           <span class="text-[11px] bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full font-bold">디저트 & 귀가</span>
         </div>
-        <h3 class="text-base font-bold text-slate-800 pl-2 mb-3">체크아웃 & 원조 호두과자 투어</h3>
+        <h3 class="text-base font-bold text-slate-800 pl-2 mb-3">체크아웃 & 천안 명물 디저트 선택</h3>
+        
         <div class="space-y-3 pl-2 text-xs text-slate-600">
           <div class="flex gap-2.5">
             <span class="font-bold text-slate-800 shrink-0 w-12">10:30</span>
-            <span>객실 정리 후 리조트 체크아웃</span>
+            <span>객실 정리 후 리조트 체크아웃 (11:00 이전)</span>
           </div>
           <div class="flex gap-2.5">
-            <span class="font-bold text-slate-800 shrink-0 w-12">11:30</span>
-            <span>원조 <strong>튀김소보로 호두과자</strong> 구입 및 대형 베이커리 카페</span>
+            <span class="font-bold text-emerald-700 shrink-0 w-12">11:30</span>
+            <div class="space-y-2 w-full">
+              <span class="font-bold text-slate-800 block">🚗 아래 두 곳 중 취향대로 선택 방문:</span>
+              
+              <div class="p-2.5 bg-amber-50 rounded-xl border border-amber-200">
+                <span class="font-bold text-amber-800">[선택 A] 뚜쥬루 빵돌가마마을 (강력추천)</span>
+                <p class="text-[11px] text-slate-600 mt-1">동화 같은 빵마을 테마파크! 팥을 직접 끓여 만드는 돌가마만주 & 대형 베이커리 카페 (아이들 사진 찍기 최고, 소노벨에서 18분)</p>
+              </div>
+
+              <div class="p-2.5 bg-orange-50 rounded-xl border border-orange-200">
+                <span class="font-bold text-orange-800">[선택 B] 천안옛날호두과자 본점</span>
+                <p class="text-[11px] text-slate-600 mt-1">바삭한 튀김소보로 호두과자의 원조! 달콤한 단팥과 소보로의 조합, 선물용 포장 구매 추천 (천안역 앞, 소노벨에서 20분)</p>
+              </div>
+            </div>
           </div>
           <div class="flex gap-2.5">
             <span class="font-bold text-slate-800 shrink-0 w-12">13:30</span>
-            <span>전주로 여유롭게 출발 ➔ 오후 3시 도착</span>
+            <span>디저트 즐긴 후 전주로 여유롭게 출발 ➔ 오후 3시경 도착</span>
           </div>
         </div>
       </div>
@@ -209,41 +222,96 @@
     </section>
 
     <section id="content-food" class="p-5 space-y-4 hidden">
-      <div class="mb-2">
-        <h3 class="font-black text-slate-800 text-base">물놀이 후 추천 맛집</h3>
-        <p class="text-xs text-slate-500">엄마 혼자 삼남매 데리고 편하게 먹는 고깃집</p>
+      <div class="mb-1">
+        <h3 class="font-black text-slate-800 text-base">물놀이 저녁 맛집 & 3일차 명물 디저트</h3>
+        <p class="text-xs text-slate-500">가족 모두 만족할 수 있는 엄선 장소 4곳</p>
       </div>
 
-      <div class="border border-slate-200 rounded-2xl p-4 shadow-sm">
+      <div class="border border-slate-200 rounded-2xl p-4 shadow-sm bg-white">
         <div class="flex justify-between items-start">
           <div>
-            <span class="bg-rose-100 text-rose-700 text-[10px] font-extrabold px-2 py-0.5 rounded-full">추천 1순위</span>
+            <span class="bg-rose-100 text-rose-700 text-[10px] font-extrabold px-2 py-0.5 rounded-full">2일차 저녁 1순위</span>
             <h4 class="text-base font-extrabold text-slate-800 mt-1">선유원 (참나무 석갈비)</h4>
-            <p class="text-xs text-slate-500 mt-0.5">차로 약 12분 거리</p>
+            <p class="text-xs text-slate-500 mt-0.5">충남 천안시 동남구 북면 위례성로 356 (소노벨 12분)</p>
           </div>
-          <a href="tel:041-555-7586" class="p-2.5 bg-rose-50 hover:bg-rose-100 text-rose-600 rounded-xl transition">
-            <i class="fa-solid fa-phone"></i>
-          </a>
         </div>
-        <div class="bg-slate-50 p-3 rounded-xl mt-3 text-xs text-slate-600 space-y-1">
-          <p><strong>💡 선정이유:</strong> 뜨거운 돌판에 <strong>전부 구워져서 나오므로</strong> 엄마가 고기를 직접 굽느라 씨름할 필요가 전혀 없습니다.</p>
-          <p><strong>대표메뉴:</strong> 참나무 돼지갈비, 양념게장 밑반찬</p>
+        <p class="text-xs text-slate-600 mt-2 bg-slate-50 p-2.5 rounded-xl">
+          💡 뜨거운 돌판에 <strong>전부 구워져서 나오므로</strong> 엄마가 고기를 구울 필요가 없습니다. 양념게장 반찬 인기!
+        </p>
+        <div class="grid grid-cols-2 gap-2 mt-3">
+          <a href="tel:041-555-7586" class="flex items-center justify-center gap-1 py-2 bg-rose-50 text-rose-600 rounded-xl text-xs font-bold hover:bg-rose-100">
+            <i class="fa-solid fa-phone"></i> 041-555-7586
+          </a>
+          <a href="https://map.naver.com/p/search/%EC%84%A0%EC%9C%A0%EC%9B%90" target="_blank" class="flex items-center justify-center gap-1 py-2 bg-slate-800 text-white rounded-xl text-xs font-bold">
+            <i class="fa-solid fa-map-location-dot"></i> 네이버 지도
+          </a>
         </div>
       </div>
 
-      <div class="border border-slate-200 rounded-2xl p-4 shadow-sm">
+      <div class="border border-slate-200 rounded-2xl p-4 shadow-sm bg-white">
         <div class="flex justify-between items-start">
           <div>
-            <span class="bg-blue-100 text-blue-700 text-[10px] font-extrabold px-2 py-0.5 rounded-full">도보 이동</span>
+            <span class="bg-blue-100 text-blue-700 text-[10px] font-extrabold px-2 py-0.5 rounded-full">소노벨 정문 앞</span>
             <h4 class="text-base font-extrabold text-slate-800 mt-1">우목정 (수제 돼지갈비)</h4>
-            <p class="text-xs text-slate-500 mt-0.5">소노벨 정문 도보 5분</p>
+            <p class="text-xs text-slate-500 mt-0.5">충남 천안시 동남구 성남면 종합휴양지로 143 (도보 5분)</p>
           </div>
-          <a href="tel:041-557-0808" class="p-2.5 bg-blue-50 hover:bg-blue-100 text-blue-600 rounded-xl transition">
-            <i class="fa-solid fa-phone"></i>
+        </div>
+        <p class="text-xs text-slate-600 mt-2 bg-slate-50 p-2.5 rounded-xl">
+          💡 물놀이 후 운전하기 지칠 때 리조트에서 걸어갈 수 있는 최고 위치. 아이들 입맛에 딱 맞는 양념갈비 전문점.
+        </p>
+        <div class="grid grid-cols-2 gap-2 mt-3">
+          <a href="tel:041-557-0808" class="flex items-center justify-center gap-1 py-2 bg-blue-50 text-blue-600 rounded-xl text-xs font-bold hover:bg-blue-100">
+            <i class="fa-solid fa-phone"></i> 041-557-0808
+          </a>
+          <a href="https://map.naver.com/p/search/%EC%9A%B0%EB%AA%A9%EC%A0%95" target="_blank" class="flex items-center justify-center gap-1 py-2 bg-slate-800 text-white rounded-xl text-xs font-bold">
+            <i class="fa-solid fa-map-location-dot"></i> 네이버 지도
           </a>
         </div>
-        <div class="bg-slate-50 p-3 rounded-xl mt-3 text-xs text-slate-600 space-y-1">
-          <p><strong>💡 선정이유:</strong> 물놀이 후 운전하기 지칠 때 걸어갈 수 있는 최고 위치. 아이들 입맛에 딱 맞는 양념갈비.</p>
+      </div>
+
+      <div class="border-t border-slate-200 pt-3 mt-2">
+        <span class="text-xs font-black text-slate-400 uppercase tracking-wider">3일차 명물 디저트 & 카페</span>
+      </div>
+
+      <div class="border-2 border-amber-400 rounded-2xl p-4 shadow-sm bg-amber-50/30">
+        <div class="flex justify-between items-start">
+          <div>
+            <span class="bg-amber-500 text-white text-[10px] font-extrabold px-2 py-0.5 rounded-full">3일차 강력추천</span>
+            <h4 class="text-base font-extrabold text-slate-800 mt-1">뚜쥬루 빵돌가마마을</h4>
+            <p class="text-xs text-slate-500 mt-0.5">충남 천안시 동남구 풍세로 706 (소노벨에서 18분)</p>
+          </div>
+        </div>
+        <p class="text-xs text-slate-600 mt-2 bg-white p-2.5 rounded-xl border border-amber-200">
+          🏰 동화마을 테마파크처럼 꾸며진 대형 베이커리! 천안 팥으로 끓여 만든 <strong>'돌가마만주'</strong>와 빵마을 카페가 있어 가족 나들이 코스로 최고입니다.
+        </p>
+        <div class="grid grid-cols-2 gap-2 mt-3">
+          <a href="tel:041-578-0036" class="flex items-center justify-center gap-1 py-2 bg-amber-100 text-amber-900 rounded-xl text-xs font-bold hover:bg-amber-200">
+            <i class="fa-solid fa-phone"></i> 041-578-0036
+          </a>
+          <a href="http://toujours.co.kr/" target="_blank" class="flex items-center justify-center gap-1 py-2 bg-amber-600 text-white rounded-xl text-xs font-bold hover:bg-amber-700">
+            <i class="fa-solid fa-globe"></i> 공식 웹사이트
+          </a>
+        </div>
+      </div>
+
+      <div class="border border-slate-200 rounded-2xl p-4 shadow-sm bg-white">
+        <div class="flex justify-between items-start">
+          <div>
+            <span class="bg-orange-100 text-orange-700 text-[10px] font-extrabold px-2 py-0.5 rounded-full">천안 명물</span>
+            <h4 class="text-base font-extrabold text-slate-800 mt-1">천안옛날호두과자 본점</h4>
+            <p class="text-xs text-slate-500 mt-0.5">충남 천안시 동남구 대흥로 237-1 (천안역 앞, 소노벨 20분)</p>
+          </div>
+        </div>
+        <p class="text-xs text-slate-600 mt-2 bg-slate-50 p-2.5 rounded-xl">
+          🍪 바삭한 곰보빵 옷을 입힌 원조 <strong>'튀김소보로 호두과자'</strong> 전문점! 달콤한 간식 및 선물 포장용으로 제격입니다.
+        </p>
+        <div class="grid grid-cols-2 gap-2 mt-3">
+          <a href="tel:041-561-5000" class="flex items-center justify-center gap-1 py-2 bg-orange-50 text-orange-700 rounded-xl text-xs font-bold hover:bg-orange-100">
+            <i class="fa-solid fa-phone"></i> 041-561-5000
+          </a>
+          <a href="http://www.hodoovillage.com/" target="_blank" class="flex items-center justify-center gap-1 py-2 bg-slate-800 text-white rounded-xl text-xs font-bold">
+            <i class="fa-solid fa-globe"></i> 공식 쇼핑몰
+          </a>
         </div>
       </div>
     </section>
@@ -261,10 +329,10 @@
         </div>
         <div class="grid grid-cols-2 gap-2">
           <a href="tel:1588-4888" class="flex items-center justify-center gap-1 py-2 bg-white border border-slate-200 rounded-xl text-xs font-bold text-slate-700">
-            <i class="fa-solid fa-phone text-blue-600"></i> 전화연결
+            <i class="fa-solid fa-phone text-blue-600"></i> 1588-4888
           </a>
           <a href="https://www.sonohotelsresorts.com/ca" target="_blank" class="flex items-center justify-center gap-1 py-2 bg-blue-600 text-white rounded-xl text-xs font-bold">
-            <i class="fa-solid fa-globe"></i> 리조트 홈
+            <i class="fa-solid fa-globe"></i> 리조트 홈페이지
           </a>
         </div>
       </div>
@@ -343,7 +411,7 @@
     }
 
     function shareTrip() {
-      const text = `[천안 소노벨 가족여행 2박 3일]\n일정: 9/6(일)~9/8(화)\n아빠 월욜 기차: 9/7(월) 천안아산역 07:34 -> 전주역 08:39 (KTX 505호)\n2일차 저녁: 선유원(석갈비) 추천!`;
+      const text = `[천안 소노벨 가족여행 2박 3일]\n일정: 9/6(일)~9/8(화)\n아빠 KTX: 9/7(월) 천안아산 07:34 -> 전주 08:39\n2일차 저녁: 선유원(석갈비) / 우목정\n3일차 디저트: 뚜쥬루 빵돌가마마을 or 옛날호두과자`;
       navigator.clipboard.writeText(text).then(() => {
         const toast = document.getElementById('toast');
         toast.classList.remove('opacity-0');
