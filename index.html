@@ -3,424 +3,777 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>천안 소노벨 & 워터파크 가족여행 플래너</title>
+  <title>2026 군산 시간여행축제 & 비응항 바다낚시 가족여행</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
     body { font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif; }
+    .hide-scrollbar::-webkit-scrollbar { display: none; }
+    .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    .tab-active { color: #0284c7; border-color: #0284c7; font-weight: 800; }
+    .tab-inactive { color: #64748b; border-color: transparent; font-weight: 600; }
   </style>
 </head>
 <body class="bg-slate-100 text-slate-800 min-h-screen flex flex-col items-center">
 
-  <div class="w-full max-w-md bg-white min-h-screen shadow-xl flex flex-col relative pb-24">
+  <div class="w-full max-w-md bg-white min-h-screen shadow-2xl flex flex-col relative pb-28">
 
-    <header class="bg-gradient-to-br from-blue-600 via-indigo-600 to-sky-500 text-white p-6 rounded-b-3xl shadow-md">
-      <div class="flex justify-between items-center mb-3">
-        <span class="bg-white/20 backdrop-blur-sm text-xs font-semibold px-3 py-1 rounded-full text-blue-50">
-          🌊 2026 가족 힐링 투어
+    <!-- 상단 헤더 -->
+    <header class="bg-gradient-to-br from-sky-600 via-teal-600 to-amber-500 text-white p-6 rounded-b-3xl shadow-lg relative overflow-hidden">
+      <!-- 배경 장식 -->
+      <div class="absolute -right-6 -bottom-6 w-32 h-32 bg-white/10 rounded-full blur-xl pointer-events-none"></div>
+      <div class="absolute -left-6 -top-6 w-28 h-28 bg-amber-400/20 rounded-full blur-lg pointer-events-none"></div>
+
+      <div class="flex justify-between items-center mb-3 relative z-10">
+        <span class="bg-white/20 backdrop-blur-md text-xs font-bold px-3 py-1 rounded-full text-white flex items-center gap-1.5 border border-white/20">
+          <i class="fa-solid fa-compass animate-spin text-amber-300" style="animation-duration: 8s;"></i> 2026 가을 가족투어
         </span>
-        <button onclick="shareTrip()" class="bg-white/20 hover:bg-white/30 text-xs px-3 py-1 rounded-full flex items-center gap-1 transition">
+        <button onclick="shareTrip()" class="bg-white/20 hover:bg-white/30 backdrop-blur-md text-xs px-3.5 py-1.5 rounded-full flex items-center gap-1.5 transition font-semibold border border-white/20 shadow-sm active:scale-95">
           <i class="fa-solid fa-share-nodes"></i> 일정 공유
         </button>
       </div>
-      <h1 class="text-2xl font-black tracking-tight leading-snug">
-        천안 소노벨 & 워터파크<br/>2박 3일 여행 가이드
-      </h1>
-      <p class="text-blue-100 text-xs mt-2 flex items-center gap-1.5">
-        <i class="fa-regular fa-calendar"></i> 9월 6일(일) ~ 9월 8일(화) | 5인 가족
-      </p>
 
-      <div class="flex flex-wrap gap-1.5 mt-3 pt-3 border-t border-white/20 text-xs font-medium">
-        <span class="bg-white/15 px-2 py-0.5 rounded-md">👨 아빠 (7일 출근)</span>
-        <span class="bg-white/15 px-2 py-0.5 rounded-md">👩 엄마</span>
-        <span class="bg-amber-400 text-slate-900 font-bold px-2 py-0.5 rounded-md">👦 중1</span>
-        <span class="bg-white/15 px-2 py-0.5 rounded-md">👧 초5</span>
-        <span class="bg-white/15 px-2 py-0.5 rounded-md">👶 초2 막내</span>
+      <div class="relative z-10">
+        <div class="text-amber-200 text-xs font-extrabold tracking-wider uppercase mb-1">Gunsan Family Journey</div>
+        <h1 class="text-2xl font-black tracking-tight leading-snug drop-shadow-sm">
+          군산 시간여행축제 &<br/>비응항 바다낚시 1박 2일
+        </h1>
+        <p class="text-sky-100 text-xs mt-2 flex items-center gap-1.5 font-medium">
+          <i class="fa-regular fa-calendar-check text-amber-300"></i> 10월 4일(토) ~ 10월 5일(일) | 1박 2일
+        </p>
+        <p class="text-sky-100 text-xs mt-0.5 flex items-center gap-1.5 font-medium">
+          <i class="fa-solid fa-location-dot text-rose-300"></i> 전주 송천동 13:00 출발 ➔ 군산 비응항
+        </p>
+
+        <!-- 가족 구성원 뱃지 -->
+        <div class="flex flex-wrap gap-1.5 mt-4 pt-3.5 border-t border-white/20 text-xs font-semibold">
+          <span class="bg-white/20 px-2.5 py-1 rounded-lg">👨 아빠</span>
+          <span class="bg-white/20 px-2.5 py-1 rounded-lg">👩 엄마</span>
+          <span class="bg-amber-400 text-slate-900 px-2.5 py-1 rounded-lg font-black shadow-sm">👦 중1 (큰아들)</span>
+          <span class="bg-pink-400 text-white px-2.5 py-1 rounded-lg font-bold shadow-sm">👧 초5 (딸)</span>
+          <span class="bg-emerald-400 text-slate-900 px-2.5 py-1 rounded-lg font-black shadow-sm">👶 초2 (막내)</span>
+        </div>
       </div>
     </header>
 
-    <nav class="flex border-b border-slate-200 bg-white sticky top-0 z-20 text-sm font-bold">
-      <button onclick="switchTab('schedule')" id="tab-schedule" class="flex-1 py-3.5 text-center text-blue-600 border-b-2 border-blue-600 transition flex items-center justify-center gap-1.5">
-        <i class="fa-solid fa-route"></i> 일정
+    <!-- 스티키 탭 네비게이션 -->
+    <nav class="flex border-b border-slate-200 bg-white/95 backdrop-blur-md sticky top-0 z-30 text-xs font-bold shadow-xs">
+      <button onclick="switchTab('schedule')" id="tab-schedule" class="flex-1 py-3 text-center tab-active border-b-2 transition flex flex-col items-center gap-1">
+        <i class="fa-solid fa-route text-base"></i>
+        <span>전체일정</span>
       </button>
-      <button onclick="switchTab('dad')" id="tab-dad" class="flex-1 py-3.5 text-center text-slate-400 border-b-2 border-transparent transition flex items-center justify-center gap-1.5">
-        <i class="fa-solid fa-train"></i> 아빠 KTX
+      <button onclick="switchTab('fishing')" id="tab-fishing" class="flex-1 py-3 text-center tab-inactive border-b-2 transition flex flex-col items-center gap-1">
+        <i class="fa-solid fa-fish-fins text-base"></i>
+        <span>비응항낚시</span>
       </button>
-      <button onclick="switchTab('food')" id="tab-food" class="flex-1 py-3.5 text-center text-slate-400 border-b-2 border-transparent transition flex items-center justify-center gap-1.5">
-        <i class="fa-solid fa-utensils"></i> 맛집·카페
+      <button onclick="switchTab('festival')" id="tab-festival" class="flex-1 py-3 text-center tab-inactive border-b-2 transition flex flex-col items-center gap-1">
+        <i class="fa-solid fa-masks-theater text-base"></i>
+        <span>시간여행축제</span>
       </button>
-      <button onclick="switchTab('links')" id="tab-links" class="flex-1 py-3.5 text-center text-slate-400 border-b-2 border-transparent transition flex items-center justify-center gap-1.5">
-        <i class="fa-solid fa-bookmark"></i> 시설/예약
+      <button onclick="switchTab('hotel')" id="tab-hotel" class="flex-1 py-3 text-center tab-inactive border-b-2 transition flex flex-col items-center gap-1">
+        <i class="fa-solid fa-hotel text-base"></i>
+        <span>추천숙소</span>
+      </button>
+      <button onclick="switchTab('food')" id="tab-food" class="flex-1 py-3 text-center tab-inactive border-b-2 transition flex flex-col items-center gap-1">
+        <i class="fa-solid fa-utensils text-base"></i>
+        <span>맛집리스트</span>
       </button>
     </nav>
 
+    <!-- ==================== 1. 일정 탭 ==================== -->
     <section id="content-schedule" class="p-5 space-y-5">
-      <div class="bg-sky-50 border border-sky-200 rounded-xl p-3.5 text-xs text-sky-800 flex items-start gap-2.5">
-        <i class="fa-solid fa-circle-info text-sky-600 text-base mt-0.5"></i>
+      <!-- 일정 요약 알림박스 -->
+      <div class="bg-gradient-to-r from-sky-50 to-teal-50 border border-sky-200 rounded-2xl p-4 text-xs text-sky-900 flex items-start gap-3 shadow-xs">
+        <div class="w-8 h-8 rounded-full bg-sky-600 text-white flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+          <i class="fa-solid fa-wand-magic-sparkles text-sm"></i>
+        </div>
         <div>
-          <strong>여행 요약:</strong> 아빠는 일요일 힐링 후 월요일 KTX 출근! 엄마와 세 아이는 월요일 워터파크 정복 후 3일차 천안 명물 디저트 투어!
+          <strong class="font-extrabold text-sky-950 text-sm block mb-1">우리 가족 1박 2일 핵심 루트</strong>
+          <span class="text-slate-600 leading-relaxed block">
+            전주 송천동(13시) ➔ 비응항 방파제 낚시 ➔ 저녁식사 ➔ 시간여행축제 야경·콘서트 ➔ 숙소 휴식 ➔ 2일차 한일옥 아침 ➔ 근대역사거리 축제 체험 ➔ 점심식사 ➔ 전주 귀가!
+          </span>
         </div>
       </div>
 
-      <div class="border border-slate-200 rounded-2xl p-4 shadow-sm relative overflow-hidden">
-        <div class="absolute top-0 left-0 w-2 h-full bg-blue-500"></div>
-        <div class="flex justify-between items-center mb-2 pl-2">
-          <span class="text-xs font-extrabold text-blue-600 tracking-wider">DAY 1 · 9월 6일(일)</span>
-          <span class="text-[11px] bg-blue-100 text-blue-800 px-2 py-0.5 rounded-full font-bold">아빠와 함께</span>
+      <!-- DAY 1 카드 -->
+      <div class="border border-slate-200 rounded-3xl p-5 shadow-sm bg-white relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-2.5 h-full bg-sky-500"></div>
+        <div class="flex justify-between items-center mb-3 pl-2">
+          <span class="text-xs font-black text-sky-600 tracking-wider flex items-center gap-1">
+            <i class="fa-regular fa-calendar-days"></i> DAY 1 · 10월 4일(토)
+          </span>
+          <span class="text-[11px] bg-sky-100 text-sky-800 px-2.5 py-0.5 rounded-full font-bold">비응항 & 야간축제</span>
         </div>
-        <h3 class="text-base font-bold text-slate-800 pl-2 mb-3">천안 도착 & 독립기념관 나들이</h3>
-        <div class="space-y-3 pl-2 text-xs text-slate-600">
-          <div class="flex gap-2.5">
-            <span class="font-bold text-slate-800 shrink-0 w-12">13:00</span>
-            <span>예배 후 전주에서 천안으로 출발 (약 1시간 40분)</span>
-          </div>
-          <div class="flex gap-2.5">
-            <span class="font-bold text-slate-800 shrink-0 w-12">15:00</span>
-            <span><strong>소노벨 천안</strong> 체크인 및 짐 풀기</span>
-          </div>
-          <div class="flex gap-2.5">
-            <span class="font-bold text-slate-800 shrink-0 w-12">16:00</span>
-            <span><strong>독립기념관</strong> 또는 단풍나무숲길 산책 (차로 5분)</span>
-          </div>
-          <div class="flex gap-2.5">
-            <span class="font-bold text-slate-800 shrink-0 w-12">18:30</span>
-            <span>온 가족 삼겹살/갈비 파티 & 아빠 환송 저녁 식사</span>
-          </div>
-          <div class="flex gap-2.5">
-            <span class="font-bold text-slate-800 shrink-0 w-12">20:30</span>
-            <span>리조트 오락실에서 중1 아들과 게임 한판</span>
-          </div>
-        </div>
-      </div>
+        <h3 class="text-base font-black text-slate-800 pl-2 mb-4">비응항 가족 낚시 & 시간여행축제 개막 즐기기</h3>
 
-      <div class="border border-slate-200 rounded-2xl p-4 shadow-sm relative overflow-hidden">
-        <div class="absolute top-0 left-0 w-2 h-full bg-indigo-500"></div>
-        <div class="flex justify-between items-center mb-2 pl-2">
-          <span class="text-xs font-extrabold text-indigo-600 tracking-wider">DAY 2 · 9월 7일(월)</span>
-          <span class="text-[11px] bg-indigo-100 text-indigo-800 px-2 py-0.5 rounded-full font-bold">워터파크 종일권</span>
-        </div>
-        <h3 class="text-base font-bold text-slate-800 pl-2 mb-3">오션어드벤처 물놀이 & 꿀맛 외식</h3>
-        <div class="space-y-3 pl-2 text-xs text-slate-600">
-          <div class="flex gap-2.5">
-            <span class="font-bold text-amber-600 shrink-0 w-12">07:00</span>
-            <span><strong>아빠 KTX 출근</strong> (천안아산 07:34 ➔ 전주 08:39)</span>
-          </div>
-          <div class="flex gap-2.5">
-            <span class="font-bold text-slate-800 shrink-0 w-12">10:30</span>
+        <div class="space-y-4 pl-2 text-xs text-slate-600">
+          <div class="flex gap-3">
+            <span class="font-black text-slate-900 shrink-0 w-12 text-sm">13:00</span>
             <div>
-              <strong>오션어드벤처 입장!</strong> (월요일이라 한산)
-              <p class="text-[11px] text-slate-500 mt-0.5">· 중1: 토네이도풀, 와일드 슬라이드<br/>· 초5/초2: 파도풀, 유수풀, 실내 바데풀</p>
+              <strong class="text-slate-800 font-bold">전주 송천동 출발</strong>
+              <p class="text-[11px] text-slate-500 mt-0.5">군산 비응항까지 약 45~50km (자동차로 약 45분 소요)</p>
             </div>
           </div>
-          <div class="flex gap-2.5">
-            <span class="font-bold text-slate-800 shrink-0 w-12">16:30</span>
-            <span>워터파크 퇴장 후 온천 사우나 피로 풀기</span>
+
+          <div class="flex gap-3">
+            <span class="font-black text-slate-900 shrink-0 w-12 text-sm">14:00</span>
+            <div>
+              <strong class="text-slate-800 font-bold">비응항 도착 & 낚시 채비 대여</strong>
+              <p class="text-[11px] text-slate-500 mt-0.5">인근 낚시점에서 대여 및 미끼(지렁이), 묶음추 원투채비 구입</p>
+            </div>
           </div>
-          <div class="flex gap-2.5">
-            <span class="font-bold text-rose-600 shrink-0 w-12">18:30</span>
-            <span><strong>2일차 저녁 특식</strong> (선유원 참나무 석갈비 또는 우목정)</span>
+
+          <div class="flex gap-3">
+            <span class="font-black text-sky-600 shrink-0 w-12 text-sm">14:30</span>
+            <div class="bg-sky-50 p-3 rounded-xl border border-sky-100 w-full">
+              <strong class="text-sky-900 font-bold flex items-center gap-1">
+                <i class="fa-solid fa-water"></i> 온가족 비응항 생활낚시 (약 2시간 30분)
+              </strong>
+              <p class="text-[11px] text-slate-600 mt-1 leading-relaxed">
+                · 안전한 방파제 내항/석축 평평한 포인트에서 원투낚시<br/>
+                · 중1, 초5, 초2 아이들과 망둥어, 우럭, 노래미 손맛 보기!<br/>
+                <span class="text-rose-600 font-bold">※ 테트라포드(삼발이) 절대 출입금지, 아이들 구명조끼 필수</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-3">
+            <span class="font-black text-slate-900 shrink-0 w-12 text-sm">17:30</span>
+            <div>
+              <strong class="text-slate-800 font-bold">1일차 저녁 식사</strong>
+              <p class="text-[11px] text-slate-500 mt-0.5">
+                [선택 A] 낚시 직후 비응항 명물 <strong>'아리울해물짬뽕'</strong> 또는 활어회<br/>
+                [선택 B] 시내로 이동하여 백종원 3대천왕 한우 떡갈비 <strong>'진갈비'</strong>
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-3">
+            <span class="font-black text-amber-600 shrink-0 w-12 text-sm">19:15</span>
+            <div class="bg-amber-50 p-3 rounded-xl border border-amber-200 w-full">
+              <strong class="text-amber-900 font-bold flex items-center gap-1">
+                <i class="fa-solid fa-star"></i> 군산 시간여행 축제 야간 페스티벌
+              </strong>
+              <p class="text-[11px] text-slate-600 mt-1 leading-relaxed">
+                · 장소: 군산 시간여행마을 일원 (구 시청광장 & 근대역사박물관)<br/>
+                · 10/4(토) 저녁 메인 공연: 시간여행 콘서트(정서주, 야다 등)<br/>
+                · 군산항 밤부두 콩쿠르, 레트로 스트릿 야간 마켓, EDM 파티
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-3">
+            <span class="font-black text-slate-900 shrink-0 w-12 text-sm">21:45</span>
+            <div>
+              <strong class="text-slate-800 font-bold">숙소 체크인 & 휴식</strong>
+              <p class="text-[11px] text-slate-500 mt-0.5">씻고 온 가족 둘러앉아 야식 및 꿀잠 충전!</p>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="border border-slate-200 rounded-2xl p-4 shadow-sm relative overflow-hidden">
-        <div class="absolute top-0 left-0 w-2 h-full bg-emerald-500"></div>
-        <div class="flex justify-between items-center mb-2 pl-2">
-          <span class="text-xs font-extrabold text-emerald-600 tracking-wider">DAY 3 · 9월 8일(화)</span>
-          <span class="text-[11px] bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full font-bold">디저트 & 귀가</span>
+      <!-- DAY 2 카드 -->
+      <div class="border border-slate-200 rounded-3xl p-5 shadow-sm bg-white relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-2.5 h-full bg-teal-500"></div>
+        <div class="flex justify-between items-center mb-3 pl-2">
+          <span class="text-xs font-black text-teal-600 tracking-wider flex items-center gap-1">
+            <i class="fa-regular fa-calendar-days"></i> DAY 2 · 10월 5일(일)
+          </span>
+          <span class="text-[11px] bg-teal-100 text-teal-800 px-2.5 py-0.5 rounded-full font-bold">근대문화 & 미식</span>
         </div>
-        <h3 class="text-base font-bold text-slate-800 pl-2 mb-3">체크아웃 & 천안 명물 디저트 선택</h3>
-        
-        <div class="space-y-3 pl-2 text-xs text-slate-600">
-          <div class="flex gap-2.5">
-            <span class="font-bold text-slate-800 shrink-0 w-12">10:30</span>
-            <span>객실 정리 후 리조트 체크아웃 (11:00 이전)</span>
-          </div>
-          <div class="flex gap-2.5">
-            <span class="font-bold text-emerald-700 shrink-0 w-12">11:30</span>
-            <div class="space-y-2 w-full">
-              <span class="font-bold text-slate-800 block">🚗 아래 두 곳 중 취향대로 선택 방문:</span>
-              
-              <div class="p-2.5 bg-amber-50 rounded-xl border border-amber-200">
-                <span class="font-bold text-amber-800">[선택 A] 뚜쥬루 빵돌가마마을 (강력추천)</span>
-                <p class="text-[11px] text-slate-600 mt-1">동화 같은 빵마을 테마파크! 팥을 직접 끓여 만드는 돌가마만주 & 대형 베이커리 카페 (아이들 사진 찍기 최고, 소노벨에서 18분)</p>
-              </div>
+        <h3 class="text-base font-black text-slate-800 pl-2 mb-4">시간여행마을 축제 체험 & 군산 미식 탐방</h3>
 
-              <div class="p-2.5 bg-orange-50 rounded-xl border border-orange-200">
-                <span class="font-bold text-orange-800">[선택 B] 천안옛날호두과자 본점</span>
-                <p class="text-[11px] text-slate-600 mt-1">바삭한 튀김소보로 호두과자의 원조! 달콤한 단팥과 소보로의 조합, 선물용 포장 구매 추천 (천안역 앞, 소노벨에서 20분)</p>
-              </div>
+        <div class="space-y-4 pl-2 text-xs text-slate-600">
+          <div class="flex gap-3">
+            <span class="font-black text-teal-700 shrink-0 w-12 text-sm">08:30</span>
+            <div class="bg-teal-50 p-2.5 rounded-xl border border-teal-100 w-full">
+              <strong class="text-teal-900 font-bold">아침 식사 : 한일옥 (소고기무국)</strong>
+              <p class="text-[11px] text-slate-500 mt-0.5">06:00부터 영업! 맑고 깊은 한우 뭇국으로 온가족 든든한 아침</p>
             </div>
           </div>
-          <div class="flex gap-2.5">
-            <span class="font-bold text-slate-800 shrink-0 w-12">13:30</span>
-            <span>디저트 즐긴 후 전주로 여유롭게 출발 ➔ 오후 3시경 도착</span>
+
+          <div class="flex gap-3">
+            <span class="font-black text-slate-900 shrink-0 w-12 text-sm">09:30</span>
+            <div>
+              <strong class="text-slate-800 font-bold">초원사진관 & 근대거리 산책</strong>
+              <p class="text-[11px] text-slate-500 mt-0.5">한일옥 바로 맞은편! 초원사진관 앞에서 온 가족 기념사진 촬영</p>
+            </div>
+          </div>
+
+          <div class="flex gap-3">
+            <span class="font-black text-indigo-600 shrink-0 w-12 text-sm">10:30</span>
+            <div class="bg-indigo-50 p-3 rounded-xl border border-indigo-100 w-full">
+              <strong class="text-indigo-900 font-bold flex items-center gap-1">
+                <i class="fa-solid fa-landmark"></i> 시간여행축제 낮 체험 정복
+              </strong>
+              <p class="text-[11px] text-slate-600 mt-1 leading-relaxed">
+                · <strong>근대의상실:</strong> 개화기 의상 입고 시간여행 인생샷!<br/>
+                · <strong>식량영단의 밀서:</strong> 인기 콜라보 방탈출 미션(아이들 취향저격)<br/>
+                · <strong>위봉함 관람:</strong> 진포해양테마공원 대형 상륙함 승선 체험
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-3">
+            <span class="font-black text-amber-700 shrink-0 w-12 text-sm">12:45</span>
+            <div>
+              <strong class="text-slate-800 font-bold">점심 식사 & 이성당 빵 투어</strong>
+              <p class="text-[11px] text-slate-500 mt-0.5">
+                · 100년 전통 문화재 중식당 <strong>'빈해원'</strong> (물짜장, 탕수육)<br/>
+                · 식사 후 대한민국 1호 빵집 <strong>'이성당'</strong> 앙금빵·야채빵 간식 포장
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-3">
+            <span class="font-black text-slate-900 shrink-0 w-12 text-sm">14:30</span>
+            <div class="bg-emerald-50 p-3 rounded-xl border border-emerald-200 w-full">
+              <strong class="text-emerald-900 font-bold">전주 송천동으로 여유롭게 귀가</strong>
+              <p class="text-[11px] text-slate-600 mt-0.5">차량으로 약 45분 소요 ➔ 15:30 전주 도착 & 여유로운 일요일 마무리!</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="content-dad" class="p-5 space-y-4 hidden">
-      <div class="bg-amber-500 text-white p-4 rounded-2xl shadow-sm">
+    <!-- ==================== 2. 비응항 낚시 탭 ==================== -->
+    <section id="content-fishing" class="p-5 space-y-4 hidden">
+      <div class="bg-gradient-to-r from-blue-600 to-cyan-600 text-white p-5 rounded-3xl shadow-sm">
+        <span class="text-[11px] font-bold bg-white/20 px-2.5 py-0.5 rounded-full">가족 생활낚시 가이드</span>
+        <h3 class="text-lg font-black mt-2">비응항 가벼운 방파제 낚시</h3>
+        <p class="text-xs text-blue-100 mt-1 leading-relaxed">
+          배를 타지 않고 발판이 편안하고 안전한 방파제/선착장 구역에서 낚싯대를 대여해 간단히 즐기는 초보 가족 낚시입니다.
+        </p>
+      </div>
+
+      <!-- 낚시용품 대여 및 낚시점 정보 -->
+      <div class="border border-slate-200 rounded-3xl p-5 shadow-sm bg-white">
+        <h4 class="font-black text-slate-800 text-sm mb-3 flex items-center gap-2">
+          <i class="fa-solid fa-store text-sky-600"></i> 현장 낚시대 대여 & 채비 구매점
+        </h4>
+
+        <div class="space-y-3">
+          <!-- 군산낚시터미널 -->
+          <div class="p-3.5 bg-slate-50 rounded-2xl border border-slate-200">
+            <div class="flex justify-between items-start">
+              <div>
+                <span class="text-[10px] font-extrabold bg-sky-100 text-sky-700 px-2 py-0.5 rounded-md">비응항 입구</span>
+                <h5 class="font-extrabold text-slate-800 text-sm mt-1">군산낚시터미널</h5>
+                <p class="text-xs text-slate-500 mt-0.5">전북 군산시 비응로 6</p>
+              </div>
+            </div>
+            <p class="text-xs text-slate-600 mt-2 bg-white p-2 rounded-xl border border-slate-100">
+              💡 낚싯대 대여 및 지렁이 미끼, 묶음추 원투채비, 살림망, 얼음, 음료 등 원스톱 구매 가능!
+            </p>
+            <div class="grid grid-cols-2 gap-2 mt-3">
+              <a href="tel:063-461-0123" class="flex items-center justify-center gap-1.5 py-2 bg-sky-50 text-sky-700 rounded-xl text-xs font-bold hover:bg-sky-100 transition">
+                <i class="fa-solid fa-phone"></i> 063-461-0123
+              </a>
+              <a href="https://map.naver.com/p/search/%EA%B5%B0%EC%82%B0%EB%82%9A%EC%8B%9C%ED%84%B0%EB%AF%B8%EB%84%90" target="_blank" class="flex items-center justify-center gap-1.5 py-2 bg-slate-800 text-white rounded-xl text-xs font-bold hover:bg-slate-700 transition">
+                <i class="fa-solid fa-map-location-dot"></i> 네이버 지도
+              </a>
+            </div>
+          </div>
+
+          <!-- 군산낚시프라자 -->
+          <div class="p-3.5 bg-slate-50 rounded-2xl border border-slate-200">
+            <div class="flex justify-between items-start">
+              <div>
+                <span class="text-[10px] font-extrabold bg-cyan-100 text-cyan-700 px-2 py-0.5 rounded-md">비응항 진입로</span>
+                <h5 class="font-extrabold text-slate-800 text-sm mt-1">군산낚시프라자</h5>
+                <p class="text-xs text-slate-500 mt-0.5">전북 군산시 새만금북로 269</p>
+              </div>
+            </div>
+            <div class="grid grid-cols-2 gap-2 mt-3">
+              <a href="tel:010-9453-4046" class="flex items-center justify-center gap-1.5 py-2 bg-cyan-50 text-cyan-700 rounded-xl text-xs font-bold hover:bg-cyan-100 transition">
+                <i class="fa-solid fa-phone"></i> 010-9453-4046
+              </a>
+              <a href="https://map.naver.com/p/search/%EA%B5%B0%EC%82%B0%EB%82%9A%EC%8B%9C%ED%94%84%EB%9D%BC%EC%9E%90" target="_blank" class="flex items-center justify-center gap-1.5 py-2 bg-slate-800 text-white rounded-xl text-xs font-bold hover:bg-slate-700 transition">
+                <i class="fa-solid fa-map-location-dot"></i> 네이버 지도
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 추천 안전 포인트 & 꿀팁 -->
+      <div class="border border-slate-200 rounded-3xl p-5 shadow-sm bg-white space-y-3">
+        <h4 class="font-black text-slate-800 text-sm flex items-center gap-2">
+          <i class="fa-solid fa-shield-halved text-emerald-600"></i> 안전 포인트 & 가족 낚시 팁
+        </h4>
+
+        <div class="bg-amber-50 border border-amber-200 rounded-2xl p-3.5 text-xs text-amber-900 space-y-1.5">
+          <strong class="font-bold flex items-center gap-1 text-amber-950">
+            <i class="fa-solid fa-triangle-exclamation text-rose-500"></i> 안전 필수 수칙 (가장 중요!)
+          </strong>
+          <p class="leading-relaxed">
+            1. <strong>테트라포드(삼발이 콘크리트)는 미끄러워 매우 위험하므로 절대 올라가지 마세요.</strong><br/>
+            2. 비응항 내항 선착장 쪽 평평한 콘크리트 발판이나 펜스가 있는 안전 구역에서만 자리를 잡으세요.<br/>
+            3. 세 아이는 반드시 <strong>구명조끼를 착용</strong>하고 낚시를 진행합니다.
+          </p>
+        </div>
+
+        <div class="space-y-2 text-xs text-slate-600">
+          <div class="p-3 bg-slate-50 rounded-xl">
+            <span class="font-bold text-slate-800">🎯 채비 추천:</span>
+            <span> 원투 묶음추 16호~20호 채비 + 갯지렁이 미끼 (초보자도 던져놓고 방울 달아두면 입질 쉽게 파악 가능)</span>
+          </div>
+          <div class="p-3 bg-slate-50 rounded-xl">
+            <span class="font-bold text-slate-800">🐟 잘 잡히는 어종:</span>
+            <span> 망둥어, 우럭, 노래미, 도다리 (10월 초 가을철 입질 활발!)</span>
+          </div>
+          <div class="p-3 bg-slate-50 rounded-xl">
+            <span class="font-bold text-slate-800">🎒 챙길 소품:</span>
+            <span> 목장갑/비닐장갑, 물티슈, 낚싯바늘 빼는 플라이어, 작은 두레박(잡은 고기 관찰용)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 3. 시간여행축제 탭 ==================== -->
+    <section id="content-festival" class="p-5 space-y-4 hidden">
+      <div class="bg-gradient-to-r from-amber-500 via-rose-500 to-purple-600 text-white p-5 rounded-3xl shadow-sm">
+        <span class="text-[11px] font-bold bg-white/20 px-2.5 py-0.5 rounded-full">10/2 ~ 10/5 개최</span>
+        <h3 class="text-lg font-black mt-2">2026 군산 시간여행 축제</h3>
+        <p class="text-xs text-amber-100 mt-1 leading-relaxed">
+          1930년대 근대 군산으로 시간여행을 떠나는 대표 거리 축제! 밤에는 화려한 야경과 콘서트, 낮에는 흥미진진한 역사 체험이 펼쳐집니다.
+        </p>
+      </div>
+
+      <!-- 축제 핵심 정보 요약 -->
+      <div class="border border-slate-200 rounded-3xl p-5 shadow-sm bg-white space-y-3">
+        <h4 class="font-black text-slate-800 text-sm flex items-center gap-2">
+          <i class="fa-solid fa-circle-info text-amber-600"></i> 축제 기본 정보
+        </h4>
+        <div class="grid grid-cols-2 gap-2 text-xs">
+          <div class="bg-slate-50 p-3 rounded-xl border border-slate-100">
+            <span class="text-slate-400 block text-[10px]">축제 장소</span>
+            <span class="font-bold text-slate-800">시간여행마을 일원</span>
+            <span class="text-[11px] text-slate-500 block">(구 시청광장~근대역사박물관)</span>
+          </div>
+          <div class="bg-slate-50 p-3 rounded-xl border border-slate-100">
+            <span class="text-slate-400 block text-[10px]">입장료</span>
+            <span class="font-bold text-emerald-600">무료 관람</span>
+            <span class="text-[11px] text-slate-500 block">(일부 체험프로그램 제외)</span>
+          </div>
+        </div>
+
+        <a href="https://festival.gunsan.go.kr/" target="_blank" class="w-full flex items-center justify-center gap-2 py-2.5 bg-amber-500 hover:bg-amber-600 text-white rounded-xl text-xs font-bold transition shadow-xs">
+          <i class="fa-solid fa-globe"></i> 군산시간여행축제 공식 홈페이지
+        </a>
+      </div>
+
+      <!-- 10/4(토) 야간 즐길거리 -->
+      <div class="border border-amber-200 bg-amber-50/40 rounded-3xl p-5 shadow-sm space-y-3">
         <div class="flex items-center justify-between">
-          <span class="text-xs font-bold bg-white/25 px-2 py-0.5 rounded">출근 성공 미션</span>
-          <span class="text-xs">출근 시각: 10:00 AM</span>
+          <h4 class="font-black text-amber-900 text-sm flex items-center gap-1.5">
+            <i class="fa-solid fa-moon text-amber-600"></i> 10월 4일(토) 야간 프로그램
+          </h4>
+          <span class="text-[10px] bg-amber-200 text-amber-900 font-extrabold px-2 py-0.5 rounded-full">저녁 방문</span>
         </div>
-        <h3 class="text-lg font-black mt-2">아빠 월요일(9/7) 전주 복귀 기차</h3>
-        <p class="text-xs text-amber-100 mt-1">소노벨 ➔ 천안아산역 택시로 약 20~25분 소요</p>
+        <ul class="text-xs text-slate-700 space-y-2">
+          <li class="flex items-start gap-2 bg-white p-2.5 rounded-xl border border-amber-100">
+            <i class="fa-solid fa-music text-purple-600 mt-0.5"></i>
+            <div>
+              <strong>시간여행 콘서트 :</strong> 정서주, 야다 등 인기가수 축하공연
+            </div>
+          </li>
+          <li class="flex items-start gap-2 bg-white p-2.5 rounded-xl border border-amber-100">
+            <i class="fa-solid fa-compact-disc text-rose-500 mt-0.5"></i>
+            <div>
+              <strong>군산항 밤부두 콩쿠르 & 스트릿 마당 :</strong> 시민과 함께하는 신나는 레트로 경연
+            </div>
+          </li>
+          <li class="flex items-start gap-2 bg-white p-2.5 rounded-xl border border-amber-100">
+            <i class="fa-solid fa-camera-retro text-amber-600 mt-0.5"></i>
+            <div>
+              <strong>근대 야간 조명 포토존 & 야시장 :</strong> 옛 정취 가득한 조명 거리와 맛있는 간식 투어
+            </div>
+          </li>
+        </ul>
       </div>
 
-      <div class="border-2 border-blue-500 bg-blue-50/40 rounded-2xl p-4 relative">
-        <span class="absolute -top-2.5 right-4 bg-blue-600 text-white text-[11px] font-bold px-2 py-0.5 rounded-full">가장 추천</span>
-        <div class="flex justify-between items-baseline mb-2">
-          <span class="font-extrabold text-slate-800">KTX-산천 505호</span>
-          <span class="text-xs font-semibold text-blue-700">소요시간 1시간 5분</span>
+      <!-- 10/5(일) 주간 즐길거리 -->
+      <div class="border border-sky-200 bg-sky-50/40 rounded-3xl p-5 shadow-sm space-y-3">
+        <div class="flex items-center justify-between">
+          <h4 class="font-black text-sky-900 text-sm flex items-center gap-1.5">
+            <i class="fa-solid fa-sun text-amber-500"></i> 10월 5일(일) 주간 체험 코스
+          </h4>
+          <span class="text-[10px] bg-sky-200 text-sky-900 font-extrabold px-2 py-0.5 rounded-full">낮 방문</span>
         </div>
-        <div class="flex items-center justify-between text-sm py-2 px-3 bg-white rounded-xl border border-blue-200 mb-3">
-          <div>
-            <div class="text-[11px] text-slate-400">천안아산역</div>
-            <div class="text-base font-black text-slate-800">07:34 출발</div>
-          </div>
-          <i class="fa-solid fa-arrow-right text-slate-400"></i>
-          <div class="text-right">
-            <div class="text-[11px] text-slate-400">전주역 도착</div>
-            <div class="text-base font-black text-emerald-600">08:39 도착</div>
-          </div>
-        </div>
-        <a href="https://www.letskorail.com/" target="_blank" class="w-full block text-center bg-blue-600 hover:bg-blue-700 text-white py-2.5 rounded-xl font-bold text-xs transition">
-          <i class="fa-solid fa-ticket mr-1"></i> 코레일 예매하기
-        </a>
+        <ul class="text-xs text-slate-700 space-y-2">
+          <li class="flex items-start gap-2 bg-white p-2.5 rounded-xl border border-sky-100">
+            <i class="fa-solid fa-vest text-teal-600 mt-0.5"></i>
+            <div>
+              <strong>근대의상 체험실 :</strong> 개화기 신사/숙녀 옷 입고 가족 인생사진 남기기
+            </div>
+          </li>
+          <li class="flex items-start gap-2 bg-white p-2.5 rounded-xl border border-sky-100">
+            <i class="fa-solid fa-key text-amber-600 mt-0.5"></i>
+            <div>
+              <strong>밀서 방탈출 미션 :</strong> '식량영단의 밀서' (구 조선식량영단, 아이들 참여도 1위)
+            </div>
+          </li>
+          <li class="flex items-start gap-2 bg-white p-2.5 rounded-xl border border-sky-100">
+            <i class="fa-solid fa-ship text-blue-600 mt-0.5"></i>
+            <div>
+              <strong>진포해양테마공원 위봉함 :</strong> 퇴역 상륙함 내부 전시 및 전투기 관람
+            </div>
+          </li>
+        </ul>
       </div>
 
-      <div class="border border-slate-200 rounded-2xl p-4">
-        <div class="flex justify-between items-baseline mb-2">
-          <span class="font-extrabold text-slate-700">KTX 503호 (조기 출발편)</span>
-          <span class="text-xs text-slate-500">소요시간 1시간 1분</span>
-        </div>
-        <div class="flex items-center justify-between text-sm py-2 px-3 bg-slate-50 rounded-xl mb-2">
-          <div>
-            <div class="text-[11px] text-slate-400">천안아산역</div>
-            <div class="font-bold text-slate-700">06:28</div>
-          </div>
-          <i class="fa-solid fa-arrow-right text-slate-300"></i>
-          <div class="text-right">
-            <div class="text-[11px] text-slate-400">전주역</div>
-            <div class="font-bold text-slate-700">07:29</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-2 gap-2 pt-2">
-        <a href="tel:041-554-1000" class="flex items-center justify-center gap-1.5 p-3 rounded-xl border border-slate-200 text-xs font-semibold text-slate-700 hover:bg-slate-50">
-          <i class="fa-solid fa-taxi text-amber-500"></i> 천안콜택시 연결
-        </a>
-        <a href="tel:1544-7788" class="flex items-center justify-center gap-1.5 p-3 rounded-xl border border-slate-200 text-xs font-semibold text-slate-700 hover:bg-slate-50">
-          <i class="fa-solid fa-phone text-blue-500"></i> 코레일 1544-7788
-        </a>
+      <!-- 교통 및 주차 안내 -->
+      <div class="border border-slate-200 rounded-3xl p-4 bg-slate-50 text-xs text-slate-600 space-y-1.5">
+        <strong class="font-bold text-slate-800 flex items-center gap-1">
+          <i class="fa-solid fa-square-parking text-sky-600"></i> 차량 통제 및 주차 안내
+        </strong>
+        <p class="leading-relaxed">
+          축제 기간 구 시청사거리~내항사거리 구간 대학로가 전면 통제됩니다. 차량은 <strong>군산 내항 공영주차장(전북 군산시 장미동 1-4)</strong> 또는 세관 뒤편 임시주차장에 주차 후 도보로 이동하시는 것이 가장 빠르고 쾌적합니다.
+        </p>
       </div>
     </section>
 
+    <!-- ==================== 4. 숙소 추천 탭 ==================== -->
+    <section id="content-hotel" class="p-5 space-y-4 hidden">
+      <div class="mb-2">
+        <h3 class="font-black text-slate-800 text-base">5인 가족 추천 숙소 4곳</h3>
+        <p class="text-xs text-slate-500">성인 2 + 아이 3명이 편안하게 묵을 수 있는 엄선된 숙소</p>
+      </div>
+
+      <!-- 1. 여미랑 (게스트하우스) -->
+      <div class="border-2 border-amber-400 rounded-3xl p-5 shadow-sm bg-white relative">
+        <span class="absolute -top-3 right-4 bg-amber-500 text-white text-[11px] font-black px-2.5 py-0.5 rounded-full shadow-xs">
+          축제장 도보 3분! 입지 1순위
+        </span>
+        <div class="flex items-center gap-3 mb-2">
+          <div class="w-10 h-10 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center font-black text-base shrink-0">
+            <i class="fa-solid fa-torii-gate"></i>
+          </div>
+          <div>
+            <h4 class="font-black text-base text-slate-800">여미랑 (구 고우당)</h4>
+            <p class="text-xs text-slate-500">전북 군산시 구영6길 13 (월명동)</p>
+          </div>
+        </div>
+        <p class="text-xs text-slate-600 bg-amber-50/70 p-3 rounded-2xl border border-amber-100 leading-relaxed">
+          🏡 <strong>축제 몰입도 최강!</strong> 일제강점기 가옥을 복원한 이색 숙박 체험관으로 정원과 연못이 아름답습니다. 시간여행마을 한가운데 위치해 축제를 밤늦게까지 즐기고 걸어 들어올 수 있습니다. <strong>온돌 다인실(가을, 겨울 등 5인 투숙 가능)</strong> 구비.
+        </p>
+        <div class="grid grid-cols-2 gap-2 mt-3.5">
+          <a href="tel:063-442-1027" class="flex items-center justify-center gap-1.5 py-2.5 bg-amber-50 text-amber-900 rounded-xl text-xs font-bold hover:bg-amber-100 transition">
+            <i class="fa-solid fa-phone"></i> 063-442-1027
+          </a>
+          <a href="http://yeomirang.co.kr/" target="_blank" class="flex items-center justify-center gap-1.5 py-2.5 bg-amber-600 text-white rounded-xl text-xs font-bold hover:bg-amber-700 transition">
+            <i class="fa-solid fa-globe"></i> 공식 예약 사이트
+          </a>
+        </div>
+      </div>
+
+      <!-- 2. 호텔 은파팰리스 -->
+      <div class="border border-slate-200 rounded-3xl p-5 shadow-sm bg-white">
+        <div class="flex items-center gap-3 mb-2">
+          <div class="w-10 h-10 rounded-2xl bg-sky-100 text-sky-700 flex items-center justify-center font-black text-base shrink-0">
+            <i class="fa-solid fa-water"></i>
+          </div>
+          <div>
+            <span class="text-[10px] font-extrabold bg-sky-100 text-sky-700 px-2 py-0.5 rounded-md">호수 전망 & 힐링</span>
+            <h4 class="font-black text-base text-slate-800 mt-0.5">호텔 은파팰리스</h4>
+            <p class="text-xs text-slate-500">전북 군산시 은파순환길 20 (나운동)</p>
+          </div>
+        </div>
+        <p class="text-xs text-slate-600 bg-slate-50 p-3 rounded-2xl border border-slate-100 leading-relaxed">
+          🌊 은파호수공원 바로 앞에 위치하여 전망이 훌륭하며 밤에 물빛다리 야경 산책하기에 최고입니다. <strong>패밀리 스위트 / 온돌룸</strong> 등 5인 가족이 쾌적하고 럭셔리하게 쉬기 좋습니다.
+        </p>
+        <div class="grid grid-cols-2 gap-2 mt-3.5">
+          <a href="tel:063-467-7000" class="flex items-center justify-center gap-1.5 py-2.5 bg-sky-50 text-sky-700 rounded-xl text-xs font-bold hover:bg-sky-100 transition">
+            <i class="fa-solid fa-phone"></i> 063-467-7000
+          </a>
+          <a href="http://eunpapalace.co.kr/" target="_blank" class="flex items-center justify-center gap-1.5 py-2.5 bg-slate-800 text-white rounded-xl text-xs font-bold hover:bg-slate-700 transition">
+            <i class="fa-solid fa-globe"></i> 호텔 홈페이지
+          </a>
+        </div>
+      </div>
+
+      <!-- 3. 에이본 호텔 군산 -->
+      <div class="border border-slate-200 rounded-3xl p-5 shadow-sm bg-white">
+        <div class="flex items-center gap-3 mb-2">
+          <div class="w-10 h-10 rounded-2xl bg-indigo-100 text-indigo-700 flex items-center justify-center font-black text-base shrink-0">
+            <i class="fa-solid fa-building"></i>
+          </div>
+          <div>
+            <span class="text-[10px] font-extrabold bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded-md">4성급 프리미엄</span>
+            <h4 class="font-black text-base text-slate-800 mt-0.5">에이본 호텔 (AVON)</h4>
+            <p class="text-xs text-slate-500">전북 군산시 해망로 10 (경장동)</p>
+          </div>
+        </div>
+        <p class="text-xs text-slate-600 bg-slate-50 p-3 rounded-2xl border border-slate-100 leading-relaxed">
+          ✨ 군산 시외/고속버스터미널 인근에 위치한 대표 4성급 호텔. 룸 컨디션이 매우 청결하고 모던하며, 패밀리 스위트 및 커넥팅룸 구조로 아이들과 함께 편안한 침대 수면 가능. 조식 뷔페 우수.
+        </p>
+        <div class="grid grid-cols-2 gap-2 mt-3.5">
+          <a href="tel:063-730-8000" class="flex items-center justify-center gap-1.5 py-2.5 bg-indigo-50 text-indigo-700 rounded-xl text-xs font-bold hover:bg-indigo-100 transition">
+            <i class="fa-solid fa-phone"></i> 063-730-8000
+          </a>
+          <a href="http://www.avonhotel.co.kr/" target="_blank" class="flex items-center justify-center gap-1.5 py-2.5 bg-slate-800 text-white rounded-xl text-xs font-bold hover:bg-slate-700 transition">
+            <i class="fa-solid fa-globe"></i> 호텔 홈페이지
+          </a>
+        </div>
+      </div>
+
+      <!-- 4. 라마다 군산 호텔 -->
+      <div class="border border-slate-200 rounded-3xl p-5 shadow-sm bg-white">
+        <div class="flex items-center gap-3 mb-2">
+          <div class="w-10 h-10 rounded-2xl bg-rose-100 text-rose-700 flex items-center justify-center font-black text-base shrink-0">
+            <i class="fa-solid fa-bed"></i>
+          </div>
+          <div>
+            <span class="text-[10px] font-extrabold bg-rose-100 text-rose-700 px-2 py-0.5 rounded-md">비응항-축제장 중간</span>
+            <h4 class="font-black text-base text-slate-800 mt-0.5">라마다 군산 호텔</h4>
+            <p class="text-xs text-slate-500">전북 군산시 백릉로 56 (소룡동)</p>
+          </div>
+        </div>
+        <p class="text-xs text-slate-600 bg-slate-50 p-3 rounded-2xl border border-slate-100 leading-relaxed">
+          🏨 비응항과 시간여행마을 중간 도로에 위치해 양쪽 모두 차량 10~15분으로 이동이 편리합니다. 깔끔한 온돌 패밀리룸 및 디럭스 패밀리 트윈 보유.
+        </p>
+        <div class="grid grid-cols-2 gap-2 mt-3.5">
+          <a href="tel:063-441-8000" class="flex items-center justify-center gap-1.5 py-2.5 bg-rose-50 text-rose-700 rounded-xl text-xs font-bold hover:bg-rose-100 transition">
+            <i class="fa-solid fa-phone"></i> 063-441-8000
+          </a>
+          <a href="https://www.ramadagunsan.com/" target="_blank" class="flex items-center justify-center gap-1.5 py-2.5 bg-slate-800 text-white rounded-xl text-xs font-bold hover:bg-slate-700 transition">
+            <i class="fa-solid fa-globe"></i> 호텔 홈페이지
+          </a>
+        </div>
+      </div>
+
+      <!-- 숙박 팁 안내 -->
+      <div class="bg-amber-50 p-3.5 rounded-2xl border border-amber-200 text-xs text-amber-900">
+        <strong>💡 5인 가족 예약 핵심 팁:</strong>
+        <p class="mt-1 leading-relaxed">
+          10월 첫째 주는 시간여행축제 성수기로 객실 마감이 빠릅니다! 5인 기준(성인 2 + 아이 3)으로 온돌룸 또는 패밀리 스위트 예약 가능 여부와 인원 추가 침구 요금을 사전 확인하세요.
+        </p>
+      </div>
+    </section>
+
+    <!-- ==================== 5. 맛집 리스트 탭 ==================== -->
     <section id="content-food" class="p-5 space-y-4 hidden">
       <div class="mb-1">
-        <h3 class="font-black text-slate-800 text-base">물놀이 저녁 맛집 & 3일차 명물 디저트</h3>
-        <p class="text-xs text-slate-500">가족 모두 만족할 수 있는 엄선 장소 4곳</p>
+        <h3 class="font-black text-slate-800 text-base">군산 대표 맛집 & 카페</h3>
+        <p class="text-xs text-slate-500">아이들과 함께 가기 좋은 엄선 식사장소 (전화, 주소, 후기)</p>
       </div>
 
-      <div class="border border-slate-200 rounded-2xl p-4 shadow-sm bg-white">
+      <!-- [1일차 저녁 추천] 진갈비 -->
+      <div class="border-2 border-rose-300 rounded-3xl p-5 shadow-sm bg-white">
         <div class="flex justify-between items-start">
           <div>
-            <span class="bg-rose-100 text-rose-700 text-[10px] font-extrabold px-2 py-0.5 rounded-full">2일차 저녁 1순위</span>
-            <h4 class="text-base font-extrabold text-slate-800 mt-1">선유원 (참나무 석갈비)</h4>
-            <p class="text-xs text-slate-500 mt-0.5">충남 천안시 동남구 북면 위례성로 356 (소노벨 12분)</p>
+            <span class="bg-rose-100 text-rose-700 text-[10px] font-extrabold px-2.5 py-0.5 rounded-full">1일차 저녁 추천</span>
+            <h4 class="text-base font-black text-slate-800 mt-1">진갈비 (한우 떡갈비)</h4>
+            <p class="text-xs text-slate-500 mt-0.5">전북 군산시 구영1길 108-7 (영화동, 축제장 도보 7분)</p>
           </div>
         </div>
-        <p class="text-xs text-slate-600 mt-2 bg-slate-50 p-2.5 rounded-xl">
-          💡 뜨거운 돌판에 <strong>전부 구워져서 나오므로</strong> 엄마가 고기를 구울 필요가 없습니다. 양념게장 반찬 인기!
-        </p>
-        <div class="grid grid-cols-2 gap-2 mt-3">
-          <a href="tel:041-555-7586" class="flex items-center justify-center gap-1 py-2 bg-rose-50 text-rose-600 rounded-xl text-xs font-bold hover:bg-rose-100">
-            <i class="fa-solid fa-phone"></i> 041-555-7586
+        <div class="mt-2.5 space-y-1.5 text-xs text-slate-600">
+          <p class="bg-rose-50/60 p-2.5 rounded-xl border border-rose-100">
+            🍖 <strong>대표메뉴:</strong> 떡갈비(국내산 한우), 곰탕, 공기밥<br/>
+            ⭐ <strong>후기 특징:</strong> 백종원의 3대천왕 방영 명가! 숯불에 구워져 나와 연기 없이 바로 먹을 수 있으며 육즙이 부드러워 세 아이들 모두 밥 한 공기 뚝딱 비우는 최고 인기 식당.
+          </p>
+        </div>
+        <div class="grid grid-cols-2 gap-2 mt-3.5">
+          <a href="tel:063-446-7707" class="flex items-center justify-center gap-1 py-2.5 bg-rose-50 text-rose-600 rounded-xl text-xs font-bold hover:bg-rose-100 transition">
+            <i class="fa-solid fa-phone"></i> 063-446-7707
           </a>
-          <a href="https://map.naver.com/p/search/%EC%84%A0%EC%9C%A0%EC%9B%90" target="_blank" class="flex items-center justify-center gap-1 py-2 bg-slate-800 text-white rounded-xl text-xs font-bold">
+          <a href="https://map.naver.com/p/search/%EA%B5%B0%EC%82%B0%20%EC%A7%84%EA%B0%88%EB%B9%84" target="_blank" class="flex items-center justify-center gap-1 py-2.5 bg-slate-800 text-white rounded-xl text-xs font-bold hover:bg-slate-700 transition">
             <i class="fa-solid fa-map-location-dot"></i> 네이버 지도
           </a>
         </div>
       </div>
 
-      <div class="border border-slate-200 rounded-2xl p-4 shadow-sm bg-white">
+      <!-- [1일차 저녁 대안] 아리울해물짬뽕 -->
+      <div class="border border-slate-200 rounded-3xl p-5 shadow-sm bg-white">
         <div class="flex justify-between items-start">
           <div>
-            <span class="bg-blue-100 text-blue-700 text-[10px] font-extrabold px-2 py-0.5 rounded-full">소노벨 정문 앞</span>
-            <h4 class="text-base font-extrabold text-slate-800 mt-1">우목정 (수제 돼지갈비)</h4>
-            <p class="text-xs text-slate-500 mt-0.5">충남 천안시 동남구 성남면 종합휴양지로 143 (도보 5분)</p>
+            <span class="bg-sky-100 text-sky-700 text-[10px] font-extrabold px-2.5 py-0.5 rounded-full">비응항 낚시 직후 식사</span>
+            <h4 class="text-base font-black text-slate-800 mt-1">아리울해물짬뽕</h4>
+            <p class="text-xs text-slate-500 mt-0.5">전북 군산시 비응동로 65 (비응항 바로 앞)</p>
           </div>
         </div>
-        <p class="text-xs text-slate-600 mt-2 bg-slate-50 p-2.5 rounded-xl">
-          💡 물놀이 후 운전하기 지칠 때 리조트에서 걸어갈 수 있는 최고 위치. 아이들 입맛에 딱 맞는 양념갈비 전문점.
-        </p>
-        <div class="grid grid-cols-2 gap-2 mt-3">
-          <a href="tel:041-557-0808" class="flex items-center justify-center gap-1 py-2 bg-blue-50 text-blue-600 rounded-xl text-xs font-bold hover:bg-blue-100">
-            <i class="fa-solid fa-phone"></i> 041-557-0808
+        <div class="mt-2.5 space-y-1.5 text-xs text-slate-600">
+          <p class="bg-slate-50 p-2.5 rounded-xl border border-slate-100">
+            🍜 <strong>대표메뉴:</strong> 해물짬뽕, 해물짜장, 바삭 탕수육<br/>
+            ⭐ <strong>후기 특징:</strong> 낚시 끝나고 바닷바람 쐰 후 뜨끈하고 푸짐한 해물 짬뽕 국물과 아이들 좋아하는 짜장면/탕수육으로 바로 해결하기에 최적!
+          </p>
+        </div>
+        <div class="grid grid-cols-2 gap-2 mt-3.5">
+          <a href="tel:063-462-4646" class="flex items-center justify-center gap-1 py-2.5 bg-sky-50 text-sky-700 rounded-xl text-xs font-bold hover:bg-sky-100 transition">
+            <i class="fa-solid fa-phone"></i> 063-462-4646
           </a>
-          <a href="https://map.naver.com/p/search/%EC%9A%B0%EB%AA%A9%EC%A0%95" target="_blank" class="flex items-center justify-center gap-1 py-2 bg-slate-800 text-white rounded-xl text-xs font-bold">
+          <a href="https://map.naver.com/p/search/%EC%95%84%EB%A6%AC%EC%9A%B8%ED%95%B4%EB%AC%BC%EC%87%AC%EB%BD%95" target="_blank" class="flex items-center justify-center gap-1 py-2.5 bg-slate-800 text-white rounded-xl text-xs font-bold hover:bg-slate-700 transition">
             <i class="fa-solid fa-map-location-dot"></i> 네이버 지도
           </a>
         </div>
       </div>
 
-      <div class="border-t border-slate-200 pt-3 mt-2">
-        <span class="text-xs font-black text-slate-400 uppercase tracking-wider">3일차 명물 디저트 & 카페</span>
-      </div>
-
-      <div class="border-2 border-amber-400 rounded-2xl p-4 shadow-sm bg-amber-50/30">
+      <!-- [2일차 아침] 한일옥 -->
+      <div class="border-2 border-amber-400 rounded-3xl p-5 shadow-sm bg-amber-50/20">
         <div class="flex justify-between items-start">
           <div>
-            <span class="bg-amber-500 text-white text-[10px] font-extrabold px-2 py-0.5 rounded-full">3일차 강력추천</span>
-            <h4 class="text-base font-extrabold text-slate-800 mt-1">뚜쥬루 빵돌가마마을</h4>
-            <p class="text-xs text-slate-500 mt-0.5">충남 천안시 동남구 풍세로 706 (소노벨에서 18분)</p>
+            <span class="bg-amber-500 text-white text-[10px] font-black px-2.5 py-0.5 rounded-full">2일차 아침 강력추천</span>
+            <h4 class="text-base font-black text-slate-800 mt-1">한일옥 (소고기무국 명가)</h4>
+            <p class="text-xs text-slate-500 mt-0.5">전북 군산시 구영3길 63 (신흥동, 초원사진관 맞은편)</p>
           </div>
         </div>
-        <p class="text-xs text-slate-600 mt-2 bg-white p-2.5 rounded-xl border border-amber-200">
-          🏰 동화마을 테마파크처럼 꾸며진 대형 베이커리! 천안 팥으로 끓여 만든 <strong>'돌가마만주'</strong>와 빵마을 카페가 있어 가족 나들이 코스로 최고입니다.
-        </p>
-        <div class="grid grid-cols-2 gap-2 mt-3">
-          <a href="tel:041-578-0036" class="flex items-center justify-center gap-1 py-2 bg-amber-100 text-amber-900 rounded-xl text-xs font-bold hover:bg-amber-200">
-            <i class="fa-solid fa-phone"></i> 041-578-0036
+        <div class="mt-2.5 space-y-1.5 text-xs text-slate-600">
+          <p class="bg-white p-2.5 rounded-xl border border-amber-200">
+            🥣 <strong>대표메뉴:</strong> 무우국(한우 소고기뭇국), 한우육회비빔밥, 콩나물국<br/>
+            ⏰ <strong>영업시간:</strong> 06:00 ~ 21:30 (이른 아침 식사 완벽 가능)<br/>
+            ⭐ <strong>후기 특징:</strong> 가마솥에 푹 끓여낸 맑고 시원한 한우 소고기뭇국 국물이 일품! 자극적이지 않아 아이들 밥 말아주면 최고의 아침. 식후 바로 앞 초원사진관 포토존 필수!
+          </p>
+        </div>
+        <div class="grid grid-cols-2 gap-2 mt-3.5">
+          <a href="tel:063-446-5502" class="flex items-center justify-center gap-1 py-2.5 bg-amber-100 text-amber-900 rounded-xl text-xs font-bold hover:bg-amber-200 transition">
+            <i class="fa-solid fa-phone"></i> 063-446-5502
           </a>
-          <a href="http://toujours.co.kr/" target="_blank" class="flex items-center justify-center gap-1 py-2 bg-amber-600 text-white rounded-xl text-xs font-bold hover:bg-amber-700">
-            <i class="fa-solid fa-globe"></i> 공식 웹사이트
+          <a href="https://map.naver.com/p/search/%EA%B5%B0%EC%82%B0%20%ED%95%9C%EC%9D%BC%EC%98%A5" target="_blank" class="flex items-center justify-center gap-1 py-2.5 bg-slate-800 text-white rounded-xl text-xs font-bold hover:bg-slate-700 transition">
+            <i class="fa-solid fa-map-location-dot"></i> 네이버 지도
           </a>
         </div>
       </div>
 
-      <div class="border border-slate-200 rounded-2xl p-4 shadow-sm bg-white">
+      <!-- [2일차 점심] 빈해원 -->
+      <div class="border border-slate-200 rounded-3xl p-5 shadow-sm bg-white">
         <div class="flex justify-between items-start">
           <div>
-            <span class="bg-orange-100 text-orange-700 text-[10px] font-extrabold px-2 py-0.5 rounded-full">천안 명물</span>
-            <h4 class="text-base font-extrabold text-slate-800 mt-1">천안옛날호두과자 본점</h4>
-            <p class="text-xs text-slate-500 mt-0.5">충남 천안시 동남구 대흥로 237-1 (천안역 앞, 소노벨 20분)</p>
+            <span class="bg-teal-100 text-teal-800 text-[10px] font-extrabold px-2.5 py-0.5 rounded-full">2일차 점심 추천</span>
+            <h4 class="text-base font-black text-slate-800 mt-1">빈해원 (등록문화재 화교 중식당)</h4>
+            <p class="text-xs text-slate-500 mt-0.5">전북 군산시 동령길 57 (장미동, 근대박물관 인근)</p>
           </div>
         </div>
-        <p class="text-xs text-slate-600 mt-2 bg-slate-50 p-2.5 rounded-xl">
-          🍪 바삭한 곰보빵 옷을 입힌 원조 <strong>'튀김소보로 호두과자'</strong> 전문점! 달콤한 간식 및 선물 포장용으로 제격입니다.
-        </p>
-        <div class="grid grid-cols-2 gap-2 mt-3">
-          <a href="tel:041-561-5000" class="flex items-center justify-center gap-1 py-2 bg-orange-50 text-orange-700 rounded-xl text-xs font-bold hover:bg-orange-100">
-            <i class="fa-solid fa-phone"></i> 041-561-5000
+        <div class="mt-2.5 space-y-1.5 text-xs text-slate-600">
+          <p class="bg-slate-50 p-2.5 rounded-xl border border-slate-100">
+            🥢 <strong>대표메뉴:</strong> 군산 명물 삼선물짜장, 짬뽕, 탕수육<br/>
+            ⭐ <strong>후기 특징:</strong> 영화 '타짜', '남자가 사랑할 때' 촬영지로 유명한 등록문화재! 웅장한 중국풍 복층 목조 건물 자체가 볼거리라 아이들에게 신기한 체험이 됩니다.
+          </p>
+        </div>
+        <div class="grid grid-cols-2 gap-2 mt-3.5">
+          <a href="tel:063-445-2429" class="flex items-center justify-center gap-1 py-2.5 bg-teal-50 text-teal-700 rounded-xl text-xs font-bold hover:bg-teal-100 transition">
+            <i class="fa-solid fa-phone"></i> 063-445-2429
           </a>
-          <a href="http://www.hodoovillage.com/" target="_blank" class="flex items-center justify-center gap-1 py-2 bg-slate-800 text-white rounded-xl text-xs font-bold">
-            <i class="fa-solid fa-globe"></i> 공식 쇼핑몰
+          <a href="https://map.naver.com/p/search/%EA%B5%B0%EC%82%B0%20%EB%B9%88%ED%95%B4%EC%9B%90" target="_blank" class="flex items-center justify-center gap-1 py-2.5 bg-slate-800 text-white rounded-xl text-xs font-bold hover:bg-slate-700 transition">
+            <i class="fa-solid fa-map-location-dot"></i> 네이버 지도
+          </a>
+        </div>
+      </div>
+
+      <!-- [디저트 & 선물] 이성당 본점 -->
+      <div class="border-2 border-orange-300 rounded-3xl p-5 shadow-sm bg-orange-50/20">
+        <div class="flex justify-between items-start">
+          <div>
+            <span class="bg-orange-500 text-white text-[10px] font-black px-2.5 py-0.5 rounded-full">군산 필수 빵지순례</span>
+            <h4 class="text-base font-black text-slate-800 mt-1">이성당 본점</h4>
+            <p class="text-xs text-slate-500 mt-0.5">전북 군산시 중앙로 177 (중앙로1가)</p>
+          </div>
+        </div>
+        <div class="mt-2.5 space-y-1.5 text-xs text-slate-600">
+          <p class="bg-white p-2.5 rounded-xl border border-orange-200">
+            🍞 <strong>대표메뉴:</strong> 단팥빵, 야채빵, 쌀 밀크쉐이크, 고로케<br/>
+            ⭐ <strong>후기 특징:</strong> 1945년에 문을 연 대한민국에서 가장 오래된 빵집! 얇은 피에 앙금이 꽉 찬 단팥빵과 아삭한 식감의 야채빵은 필수 간식 포장 아이템.
+          </p>
+        </div>
+        <div class="grid grid-cols-2 gap-2 mt-3.5">
+          <a href="tel:063-445-2778" class="flex items-center justify-center gap-1 py-2.5 bg-orange-100 text-orange-900 rounded-xl text-xs font-bold hover:bg-orange-200 transition">
+            <i class="fa-solid fa-phone"></i> 063-445-2778
+          </a>
+          <a href="https://map.naver.com/p/search/%EC%9D%B4%EC%84%B1%EB%8B%B9%20%EB%B3%B8%EC%A0%90" target="_blank" class="flex items-center justify-center gap-1 py-2.5 bg-slate-800 text-white rounded-xl text-xs font-bold hover:bg-slate-700 transition">
+            <i class="fa-solid fa-map-location-dot"></i> 네이버 지도
           </a>
         </div>
       </div>
     </section>
 
-    <section id="content-links" class="p-5 space-y-4 hidden">
-      <div class="border border-slate-200 rounded-2xl p-4 bg-slate-50">
-        <div class="flex items-center gap-3 mb-3">
-          <div class="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold">
-            <i class="fa-solid fa-hotel"></i>
-          </div>
-          <div>
-            <h4 class="font-extrabold text-sm text-slate-800">소노벨 천안 리조트</h4>
-            <p class="text-[11px] text-slate-500">체크인 15:00 / 체크아웃 11:00</p>
-          </div>
-        </div>
-        <div class="grid grid-cols-2 gap-2">
-          <a href="tel:1588-4888" class="flex items-center justify-center gap-1 py-2 bg-white border border-slate-200 rounded-xl text-xs font-bold text-slate-700">
-            <i class="fa-solid fa-phone text-blue-600"></i> 1588-4888
-          </a>
-          <a href="https://www.sonohotelsresorts.com/ca" target="_blank" class="flex items-center justify-center gap-1 py-2 bg-blue-600 text-white rounded-xl text-xs font-bold">
-            <i class="fa-solid fa-globe"></i> 리조트 홈페이지
-          </a>
-        </div>
+    <!-- 플로팅 카카오톡/문자 공유 바 -->
+    <div class="fixed bottom-0 max-w-md w-full bg-white/90 backdrop-blur-lg border-t border-slate-200 p-3.5 flex items-center justify-between z-40 px-5 shadow-lg">
+      <div>
+        <div class="text-[11px] text-slate-400 font-semibold">10/4 ~ 10/5 가족여행</div>
+        <div class="text-xs font-black text-slate-800">군산 1박 2일 플래너</div>
       </div>
+      <button onclick="shareTrip()" class="bg-gradient-to-r from-sky-600 to-amber-500 text-white text-xs font-black px-4 py-2.5 rounded-2xl flex items-center gap-2 shadow-md active:scale-95 transition">
+        <i class="fa-solid fa-share-nodes"></i> 가족에게 일정 공유하기
+      </button>
+    </div>
 
-      <div class="border border-slate-200 rounded-2xl p-4 bg-slate-50">
-        <div class="flex items-center gap-3 mb-3">
-          <div class="w-10 h-10 rounded-xl bg-cyan-600 text-white flex items-center justify-center font-bold">
-            <i class="fa-solid fa-water-ladder"></i>
-          </div>
-          <div>
-            <h4 class="font-extrabold text-sm text-slate-800">오션어드벤처 천안</h4>
-            <p class="text-[11px] text-slate-500">운영시간 10:00 ~ 17:00</p>
-          </div>
-        </div>
-        <div class="grid grid-cols-2 gap-2">
-          <a href="tel:041-560-9114" class="flex items-center justify-center gap-1 py-2 bg-white border border-slate-200 rounded-xl text-xs font-bold text-slate-700">
-            <i class="fa-solid fa-phone text-cyan-600"></i> 041-560-9114
-          </a>
-          <a href="https://www.sonohotelsresorts.com/ca/waterpark" target="_blank" class="flex items-center justify-center gap-1 py-2 bg-cyan-600 text-white rounded-xl text-xs font-bold">
-            이용안내
-          </a>
-        </div>
-      </div>
-
-      <div class="border border-slate-200 rounded-2xl p-4 bg-white">
-        <h4 class="font-extrabold text-sm text-slate-800 mb-2 flex items-center gap-1.5">
-          <i class="fa-solid fa-clipboard-check text-emerald-600"></i> 워터파크 챙김 체크리스트
-        </h4>
-        <div class="space-y-2 text-xs text-slate-600">
-          <label class="flex items-center gap-2 cursor-pointer">
-            <input type="checkbox" class="w-4 h-4 text-blue-600 rounded">
-            <span><strong>수영모 또는 캡모자 (필수 미착용시 입장불가)</strong></span>
-          </label>
-          <label class="flex items-center gap-2 cursor-pointer">
-            <input type="checkbox" class="w-4 h-4 text-blue-600 rounded">
-            <span>래시가드 & 수영복 (여벌 포함)</span>
-          </label>
-          <label class="flex items-center gap-2 cursor-pointer">
-            <input type="checkbox" class="w-4 h-4 text-blue-600 rounded">
-            <span>아쿠아슈즈</span>
-          </label>
-          <label class="flex items-center gap-2 cursor-pointer">
-            <input type="checkbox" class="w-4 h-4 text-blue-600 rounded">
-            <span>스마트폰 방수팩</span>
-          </label>
-          <label class="flex items-center gap-2 cursor-pointer">
-            <input type="checkbox" class="w-4 h-4 text-blue-600 rounded">
-            <span>아빠 KTX 승차권 예매</span>
-          </label>
-        </div>
-      </div>
-    </section>
-
-    <div id="toast" class="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-slate-900/90 text-white text-xs px-4 py-2 rounded-full shadow-lg opacity-0 transition-opacity duration-300 pointer-events-none z-50 flex items-center gap-1.5">
-      <i class="fa-solid fa-check text-emerald-400"></i> <span>일정 요약이 복사되었습니다!</span>
+    <!-- 복사 완료 토스트 -->
+    <div id="toast" class="fixed bottom-20 left-1/2 transform -translate-x-1/2 bg-slate-900/90 text-white text-xs px-4 py-2.5 rounded-full shadow-2xl opacity-0 transition-opacity duration-300 pointer-events-none z-50 flex items-center gap-2 border border-white/10">
+      <i class="fa-solid fa-circle-check text-emerald-400"></i>
+      <span>일정 및 주요 정보가 클립보드에 복사되었습니다!</span>
     </div>
 
   </div>
 
   <script>
     function switchTab(tabId) {
-      const tabs = ['schedule', 'dad', 'food', 'links'];
+      const tabs = ['schedule', 'fishing', 'festival', 'hotel', 'food'];
       tabs.forEach(tab => {
         const btn = document.getElementById('tab-' + tab);
         const content = document.getElementById('content-' + tab);
         if (tab === tabId) {
-          btn.classList.add('text-blue-600', 'border-blue-600');
-          btn.classList.remove('text-slate-400', 'border-transparent');
+          btn.className = 'flex-1 py-3 text-center tab-active border-b-2 transition flex flex-col items-center gap-1';
           content.classList.remove('hidden');
         } else {
-          btn.classList.remove('text-blue-600', 'border-blue-600');
-          btn.classList.add('text-slate-400', 'border-transparent');
+          btn.className = 'flex-1 py-3 text-center tab-inactive border-b-2 transition flex flex-col items-center gap-1';
           content.classList.add('hidden');
         }
       });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     function shareTrip() {
-      const text = `[천안 소노벨 가족여행 2박 3일]\n일정: 9/6(일)~9/8(화)\n아빠 KTX: 9/7(월) 천안아산 07:34 -> 전주 08:39\n2일차 저녁: 선유원(석갈비) / 우목정\n3일차 디저트: 뚜쥬루 빵돌가마마을 or 옛날호두과자`;
-      navigator.clipboard.writeText(text).then(() => {
-        const toast = document.getElementById('toast');
-        toast.classList.remove('opacity-0');
-        toast.classList.add('opacity-100');
-        setTimeout(() => {
-          toast.classList.remove('opacity-100');
-          toast.classList.add('opacity-0');
-        }, 2000);
-      });
+      const text = `[🏮 군산 시간여행축제 & 비응항 바다낚시 1박 2일 가족여행]\n\n` +
+        `📅 일정: 10월 4일(토) ~ 10월 5일(일)\n` +
+        `🚗 출발: 10/4(토) 13:00 전주 송천동 출발\n` +
+        `👨‍👩‍👧‍👦 인원: 5명 (아빠, 엄마, 중1, 초5, 초2)\n\n` +
+        `[DAY 1]\n` +
+        `· 14:00 비응항 도착 & 낚시대 대여\n` +
+        `· 14:30 온가족 비응항 방파제 생활낚시\n` +
+        `· 17:30 저녁식사 (진갈비 떡갈비 or 아리울해물짬뽕)\n` +
+        `· 19:15 군산 시간여행 축제 야간 콘서트 & 야경\n` +
+        `· 21:45 숙소 체크인 (여미랑 / 은파팰리스 / 에이본)\n\n` +
+        `[DAY 2]\n` +
+        `· 08:30 아침식사 : 한일옥 (소고기무국)\n` +
+        `· 09:30 초원사진관 & 근대골목 산책\n` +
+        `· 10:30 시간여행축제 체험 (근대의상, 방탈출, 위봉함)\n` +
+        `· 12:45 점심식사 : 빈해원 (물짜장/탕수육) & 이성당 빵 포장\n` +
+        `· 14:30 전주 귀가 출발 ➔ 15:30 전주 도착!`;
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => {
+          showToast();
+        }).catch(() => {
+          fallbackCopyText(text);
+        });
+      } else {
+        fallbackCopyText(text);
+      }
+    }
+
+    function fallbackCopyText(text) {
+      const textArea = document.createElement("textarea");
+      textArea.value = text;
+      document.body.appendChild(textArea);
+      textArea.select();
+      try {
+        document.execCommand('copy');
+        showToast();
+      } catch (err) {
+        alert("일정 복사 실패: 직접 복사해주세요.");
+      }
+      document.body.removeChild(textArea);
+    }
+
+    function showToast() {
+      const toast = document.getElementById('toast');
+      toast.classList.remove('opacity-0');
+      toast.classList.add('opacity-100');
+      setTimeout(() => {
+        toast.classList.remove('opacity-100');
+        toast.classList.add('opacity-0');
+      }, 2300);
     }
   </script>
 </body>
