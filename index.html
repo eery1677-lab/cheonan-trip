@@ -58,26 +58,30 @@
     </header>
 
     <!-- 스티키 탭 네비게이션 -->
-    <nav class="flex border-b border-slate-200 bg-white/95 backdrop-blur-md sticky top-0 z-30 text-xs font-bold shadow-xs">
-      <button onclick="switchTab('schedule')" id="tab-schedule" class="flex-1 py-3 text-center tab-active border-b-2 transition flex flex-col items-center gap-1">
-        <i class="fa-solid fa-route text-base"></i>
+    <nav class="flex border-b border-slate-200 bg-white/95 backdrop-blur-md sticky top-0 z-30 text-[11px] font-bold shadow-xs overflow-x-auto hide-scrollbar">
+      <button onclick="switchTab('schedule')" id="tab-schedule" class="flex-1 min-w-[58px] py-2.5 text-center tab-active border-b-2 transition flex flex-col items-center gap-1 shrink-0">
+        <i class="fa-solid fa-route text-sm"></i>
         <span>전체일정</span>
       </button>
-      <button onclick="switchTab('fishing')" id="tab-fishing" class="flex-1 py-3 text-center tab-inactive border-b-2 transition flex flex-col items-center gap-1">
-        <i class="fa-solid fa-fish-fins text-base"></i>
+      <button onclick="switchTab('fishing')" id="tab-fishing" class="flex-1 min-w-[58px] py-2.5 text-center tab-inactive border-b-2 transition flex flex-col items-center gap-1 shrink-0">
+        <i class="fa-solid fa-fish-fins text-sm"></i>
         <span>비응항낚시</span>
       </button>
-      <button onclick="switchTab('festival')" id="tab-festival" class="flex-1 py-3 text-center tab-inactive border-b-2 transition flex flex-col items-center gap-1">
-        <i class="fa-solid fa-masks-theater text-base"></i>
+      <button onclick="switchTab('festival')" id="tab-festival" class="flex-1 min-w-[58px] py-2.5 text-center tab-inactive border-b-2 transition flex flex-col items-center gap-1 shrink-0">
+        <i class="fa-solid fa-masks-theater text-sm"></i>
         <span>시간여행축제</span>
       </button>
-      <button onclick="switchTab('hotel')" id="tab-hotel" class="flex-1 py-3 text-center tab-inactive border-b-2 transition flex flex-col items-center gap-1">
-        <i class="fa-solid fa-hotel text-base"></i>
+      <button onclick="switchTab('hotel')" id="tab-hotel" class="flex-1 min-w-[58px] py-2.5 text-center tab-inactive border-b-2 transition flex flex-col items-center gap-1 shrink-0">
+        <i class="fa-solid fa-hotel text-sm"></i>
         <span>추천숙소</span>
       </button>
-      <button onclick="switchTab('food')" id="tab-food" class="flex-1 py-3 text-center tab-inactive border-b-2 transition flex flex-col items-center gap-1">
-        <i class="fa-solid fa-utensils text-base"></i>
+      <button onclick="switchTab('food')" id="tab-food" class="flex-1 min-w-[58px] py-2.5 text-center tab-inactive border-b-2 transition flex flex-col items-center gap-1 shrink-0">
+        <i class="fa-solid fa-utensils text-sm"></i>
         <span>맛집리스트</span>
+      </button>
+      <button onclick="switchTab('checklist')" id="tab-checklist" class="flex-1 min-w-[58px] py-2.5 text-center tab-inactive border-b-2 transition flex flex-col items-center gap-1 shrink-0">
+        <i class="fa-solid fa-clipboard-check text-sm"></i>
+        <span>준비·메모</span>
       </button>
     </nav>
 
@@ -984,6 +988,170 @@
       </div>
     </section>
 
+    <!-- ==================== 6. 준비물 & 메모 탭 ==================== -->
+    <section id="content-checklist" class="p-5 space-y-4 hidden">
+      <div class="bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 text-white p-5 rounded-3xl shadow-sm">
+        <span class="text-[11px] font-bold bg-white/20 px-2.5 py-0.5 rounded-full">스마트 짐싸기 가이드</span>
+        <h3 class="text-lg font-black mt-2">여행 준비물 체크리스트 & 메모장</h3>
+        <p class="text-xs text-emerald-100 mt-1 leading-relaxed">
+          항목을 터치하여 체크하면 취소선이 그어지며, 브라우저를 껐다 켜도 체크 상태와 메모가 안전하게 자동 저장됩니다!
+        </p>
+      </div>
+
+      <!-- 1. 필수 상비약 -->
+      <div class="border border-slate-200 bg-white rounded-3xl p-5 shadow-sm space-y-3">
+        <div class="flex items-center justify-between">
+          <h4 class="font-black text-rose-600 text-sm flex items-center gap-2">
+            <i class="fa-solid fa-kit-medical text-base"></i> 필수 상비약 (건강 지킴이)
+          </h4>
+          <span class="text-[10px] bg-rose-100 text-rose-700 font-extrabold px-2 py-0.5 rounded-full">가장 중요</span>
+        </div>
+        <div class="space-y-1.5 text-xs text-slate-700">
+          <label class="flex items-center gap-2.5 p-2 rounded-xl hover:bg-slate-50 cursor-pointer">
+            <input type="checkbox" onchange="toggleCheck(this)" data-check="med-1" class="w-4 h-4 text-emerald-600 rounded">
+            <span><strong>멀미약 :</strong> 장거리 이동 및 비응항 바닷가 대비 (어린이용 시럽/정제)</span>
+          </label>
+          <label class="flex items-center gap-2.5 p-2 rounded-xl hover:bg-slate-50 cursor-pointer">
+            <input type="checkbox" onchange="toggleCheck(this)" data-check="med-2" class="w-4 h-4 text-emerald-600 rounded">
+            <span><strong>소화제 & 위장약 :</strong> 떡갈비/해물짬뽕/간식 등 외식 후 소화 불량 대비</span>
+          </label>
+          <label class="flex items-center gap-2.5 p-2 rounded-xl hover:bg-slate-50 cursor-pointer">
+            <input type="checkbox" onchange="toggleCheck(this)" data-check="med-3" class="w-4 h-4 text-emerald-600 rounded">
+            <span><strong>해열진통제 :</strong> 어린이용 타이레놀/챔프 + 어른용 진통제</span>
+          </label>
+          <label class="flex items-center gap-2.5 p-2 rounded-xl hover:bg-slate-50 cursor-pointer">
+            <input type="checkbox" onchange="toggleCheck(this)" data-check="med-4" class="w-4 h-4 text-emerald-600 rounded">
+            <span><strong>밴드류 & 연고 :</strong> 대일밴드, 방수밴드, 후시딘/마데카솔 연고 (낚시 상처 대비)</span>
+          </label>
+          <label class="flex items-center gap-2.5 p-2 rounded-xl hover:bg-slate-50 cursor-pointer">
+            <input type="checkbox" onchange="toggleCheck(this)" data-check="med-5" class="w-4 h-4 text-emerald-600 rounded">
+            <span><strong>모기기피제 & 버물리 :</strong> 가을철 바닷가 방파제 및 야간 축제 잔디밭 필수</span>
+          </label>
+          <label class="flex items-center gap-2.5 p-2 rounded-xl hover:bg-slate-50 cursor-pointer">
+            <input type="checkbox" onchange="toggleCheck(this)" data-check="med-6" class="w-4 h-4 text-emerald-600 rounded">
+            <span><strong>인공눈물 / 안약 & 소독용 스왑 :</strong> 먼지 및 모래 대비</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- 2. 옷 & 복장 -->
+      <div class="border border-slate-200 bg-white rounded-3xl p-5 shadow-sm space-y-3">
+        <h4 class="font-black text-indigo-600 text-sm flex items-center gap-2">
+          <i class="fa-solid fa-shirt text-base"></i> 옷 & 복장 (가을 바닷바람 대비)
+        </h4>
+        <div class="space-y-1.5 text-xs text-slate-700">
+          <label class="flex items-center gap-2.5 p-2 rounded-xl hover:bg-slate-50 cursor-pointer">
+            <input type="checkbox" onchange="toggleCheck(this)" data-check="cloth-1" class="w-4 h-4 text-emerald-600 rounded">
+            <span><strong>방풍 외투 (바람막이/경량패딩) :</strong> 10월 초 저녁 바닷바람 및 야간 축제 필수!</span>
+          </label>
+          <label class="flex items-center gap-2.5 p-2 rounded-xl hover:bg-slate-50 cursor-pointer">
+            <input type="checkbox" onchange="toggleCheck(this)" data-check="cloth-2" class="w-4 h-4 text-emerald-600 rounded">
+            <span><strong>아이들 여벌옷 (1~2벌) :</strong> 낚시 중 바닷물 튐 및 축제 체험 오염 대비</span>
+          </label>
+          <label class="flex items-center gap-2.5 p-2 rounded-xl hover:bg-slate-50 cursor-pointer">
+            <input type="checkbox" onchange="toggleCheck(this)" data-check="cloth-3" class="w-4 h-4 text-emerald-600 rounded">
+            <span><strong>편안한 운동화 :</strong> 시간여행 골목길, 진포해양공원 등 도보 투어용</span>
+          </label>
+          <label class="flex items-center gap-2.5 p-2 rounded-xl hover:bg-slate-50 cursor-pointer">
+            <input type="checkbox" onchange="toggleCheck(this)" data-check="cloth-4" class="w-4 h-4 text-emerald-600 rounded">
+            <span><strong>모자 & 캡모자 :</strong> 낮 시간 햇볕 차단 및 낚시용</span>
+          </label>
+          <label class="flex items-center gap-2.5 p-2 rounded-xl hover:bg-slate-50 cursor-pointer">
+            <input type="checkbox" onchange="toggleCheck(this)" data-check="cloth-5" class="w-4 h-4 text-emerald-600 rounded">
+            <span><strong>잠옷, 속옷 & 여벌 양말 :</strong> 5인 가족 숙소용 편한 복장</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- 3. 낚시 & 야외 활동 용품 -->
+      <div class="border border-slate-200 bg-white rounded-3xl p-5 shadow-sm space-y-3">
+        <h4 class="font-black text-sky-600 text-sm flex items-center gap-2">
+          <i class="fa-solid fa-fish-fins text-base"></i> 낚시 & 야외 활동 준비물
+        </h4>
+        <div class="space-y-1.5 text-xs text-slate-700">
+          <label class="flex items-center gap-2.5 p-2 rounded-xl hover:bg-slate-50 cursor-pointer">
+            <input type="checkbox" onchange="toggleCheck(this)" data-check="fish-1" class="w-4 h-4 text-emerald-600 rounded">
+            <span><strong>🚨 아이들 구명조끼 (필수) :</strong> 방파제 안전 최우선!</span>
+          </label>
+          <label class="flex items-center gap-2.5 p-2 rounded-xl hover:bg-slate-50 cursor-pointer">
+            <input type="checkbox" onchange="toggleCheck(this)" data-check="fish-2" class="w-4 h-4 text-emerald-600 rounded">
+            <span><strong>목장갑 & 코팅장갑 :</strong> 갯지렁이 미끼 끼우기 및 물고기 바늘 빼기용</span>
+          </label>
+          <label class="flex items-center gap-2.5 p-2 rounded-xl hover:bg-slate-50 cursor-pointer">
+            <input type="checkbox" onchange="toggleCheck(this)" data-check="fish-3" class="w-4 h-4 text-emerald-600 rounded">
+            <span><strong>대용량 물티슈 & 휴대용 화장지 :</strong> 낚시 후 손 닦기 및 야외 활동</span>
+          </label>
+          <label class="flex items-center gap-2.5 p-2 rounded-xl hover:bg-slate-50 cursor-pointer">
+            <input type="checkbox" onchange="toggleCheck(this)" data-check="fish-4" class="w-4 h-4 text-emerald-600 rounded">
+            <span><strong>가위 또는 쪽가위 :</strong> 낚싯줄 자르기용</span>
+          </label>
+          <label class="flex items-center gap-2.5 p-2 rounded-xl hover:bg-slate-50 cursor-pointer">
+            <input type="checkbox" onchange="toggleCheck(this)" data-check="fish-5" class="w-4 h-4 text-emerald-600 rounded">
+            <span><strong>종량제 쓰레기봉투 (10L~20L) :</strong> 발생한 쓰레기 깔끔하게 되가져오기</span>
+          </label>
+          <label class="flex items-center gap-2.5 p-2 rounded-xl hover:bg-slate-50 cursor-pointer">
+            <input type="checkbox" onchange="toggleCheck(this)" data-check="fish-6" class="w-4 h-4 text-emerald-600 rounded">
+            <span><strong>아이들 간식 & 생수/음료수 :</strong> 낚시하며 즐길 간단한 주전부리</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- 4. 숙박 & 전자기기 & 기타 -->
+      <div class="border border-slate-200 bg-white rounded-3xl p-5 shadow-sm space-y-3">
+        <h4 class="font-black text-amber-600 text-sm flex items-center gap-2">
+          <i class="fa-solid fa-suitcase-rolling text-base"></i> 숙소 & 전자기기 & 필수 지갑
+        </h4>
+        <div class="space-y-1.5 text-xs text-slate-700">
+          <label class="flex items-center gap-2.5 p-2 rounded-xl hover:bg-slate-50 cursor-pointer">
+            <input type="checkbox" onchange="toggleCheck(this)" data-check="etc-1" class="w-4 h-4 text-emerald-600 rounded">
+            <span><strong>스마트폰 충전기 & 멀티탭 :</strong> 5인 가족 스마트폰 일괄 충전용</span>
+          </label>
+          <label class="flex items-center gap-2.5 p-2 rounded-xl hover:bg-slate-50 cursor-pointer">
+            <input type="checkbox" onchange="toggleCheck(this)" data-check="etc-2" class="w-4 h-4 text-emerald-600 rounded">
+            <span><strong>대용량 보조배터리 :</strong> 야외 축제 사진 촬영 및 낚시 중 배터리 방전 대비</span>
+          </label>
+          <label class="flex items-center gap-2.5 p-2 rounded-xl hover:bg-slate-50 cursor-pointer">
+            <input type="checkbox" onchange="toggleCheck(this)" data-check="etc-3" class="w-4 h-4 text-emerald-600 rounded">
+            <span><strong>성인 신분증 / 모바일 신분증 :</strong> 숙소 체크인용</span>
+          </label>
+          <label class="flex items-center gap-2.5 p-2 rounded-xl hover:bg-slate-50 cursor-pointer">
+            <input type="checkbox" onchange="toggleCheck(this)" data-check="etc-4" class="w-4 h-4 text-emerald-600 rounded">
+            <span><strong>세면도구 & 로션/선크림 :</strong> 칫솔/치약/면도기/선크림 (호텔 무상제공 제한 대비)</span>
+          </label>
+          <label class="flex items-center gap-2.5 p-2 rounded-xl hover:bg-slate-50 cursor-pointer">
+            <input type="checkbox" onchange="toggleCheck(this)" data-check="etc-5" class="w-4 h-4 text-emerald-600 rounded">
+            <span><strong>소액 현금 & 신용카드 :</strong> 축제 야시장 간식 부스 및 낚시대 대여 보증금</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- 5. 우리 가족 실시간 여행 메모장 -->
+      <div class="border-2 border-emerald-400 bg-white rounded-3xl p-5 shadow-sm space-y-3">
+        <div class="flex items-center justify-between">
+          <h4 class="font-black text-slate-800 text-sm flex items-center gap-2">
+            <i class="fa-solid fa-pen-to-square text-emerald-600 text-base"></i> 우리 가족 여행 실시간 메모장
+          </h4>
+          <span class="text-[10px] bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded-full flex items-center gap-1">
+            <i class="fa-solid fa-floppy-disk"></i> 자동 저장 중
+          </span>
+        </div>
+        <p class="text-[11px] text-slate-500">
+          이성당에서 살 빵 목록, 아이들이 사고 싶은 기념품, 개인 챙길 짐 등을 자유롭게 메모해 두세요. 화면을 닫아도 지워지지 않습니다!
+        </p>
+
+        <textarea id="family-memo" oninput="saveMemo()" rows="6" class="w-full p-3.5 bg-slate-50 border border-slate-200 rounded-2xl text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:bg-white leading-relaxed resize-none" placeholder="[예시]&#10;· 이성당 빵 : 단팥빵 5개, 야채빵 5개, 밀크쉐이크 2잔&#10;· 큰아들(중1) : 방탈출 미션 시간 확인&#10;· 딸(초5) : 개화기 의상 대여 모자 고르기&#10;· 막내(초2) : 위봉함 함선 탱크 앞에서 사진 찍기&#10;· 추가 챙길 것 : 생수 2병, 차량용 휴대폰 거치대"></textarea>
+
+        <div class="flex gap-2 pt-1">
+          <button onclick="copyMemo()" class="flex-1 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold transition flex items-center justify-center gap-1.5 active:scale-95 shadow-xs">
+            <i class="fa-regular fa-copy"></i> 메모 내용 복사
+          </button>
+          <button onclick="clearMemo()" class="px-3.5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-xl text-xs font-bold transition flex items-center justify-center gap-1.5 active:scale-95">
+            <i class="fa-solid fa-trash-can"></i> 비우기
+          </button>
+        </div>
+      </div>
+    </section>
+
     <!-- 플로팅 카카오톡/문자 공유 바 -->
     <div class="fixed bottom-0 max-w-md w-full bg-white/90 backdrop-blur-lg border-t border-slate-200 p-3.5 flex items-center justify-between z-40 px-5 shadow-lg">
       <div>
@@ -1005,20 +1173,99 @@
 
   <script>
     function switchTab(tabId) {
-      const tabs = ['schedule', 'fishing', 'festival', 'hotel', 'food'];
+      const tabs = ['schedule', 'fishing', 'festival', 'hotel', 'food', 'checklist'];
       tabs.forEach(tab => {
         const btn = document.getElementById('tab-' + tab);
         const content = document.getElementById('content-' + tab);
-        if (tab === tabId) {
-          btn.className = 'flex-1 py-3 text-center tab-active border-b-2 transition flex flex-col items-center gap-1';
-          content.classList.remove('hidden');
-        } else {
-          btn.className = 'flex-1 py-3 text-center tab-inactive border-b-2 transition flex flex-col items-center gap-1';
-          content.classList.add('hidden');
+        if (btn && content) {
+          if (tab === tabId) {
+            btn.className = 'flex-1 min-w-[58px] py-2.5 text-center tab-active border-b-2 transition flex flex-col items-center gap-1 shrink-0';
+            content.classList.remove('hidden');
+          } else {
+            btn.className = 'flex-1 min-w-[58px] py-2.5 text-center tab-inactive border-b-2 transition flex flex-col items-center gap-1 shrink-0';
+            content.classList.add('hidden');
+          }
         }
       });
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+
+    function toggleCheck(el) {
+      const key = el.getAttribute('data-check');
+      const span = el.nextElementSibling;
+      if (el.checked) {
+        if (span) span.classList.add('line-through', 'text-slate-400');
+        localStorage.setItem('gunsan_check_' + key, 'true');
+      } else {
+        if (span) span.classList.remove('line-through', 'text-slate-400');
+        localStorage.removeItem('gunsan_check_' + key);
+      }
+    }
+
+    function loadChecks() {
+      const checkboxes = document.querySelectorAll('input[data-check]');
+      checkboxes.forEach(cb => {
+        const key = cb.getAttribute('data-check');
+        if (localStorage.getItem('gunsan_check_' + key) === 'true') {
+          cb.checked = true;
+          if (cb.nextElementSibling) {
+            cb.nextElementSibling.classList.add('line-through', 'text-slate-400');
+          }
+        }
+      });
+    }
+
+    function saveMemo() {
+      const memo = document.getElementById('family-memo');
+      if (memo) {
+        localStorage.setItem('gunsan_family_memo', memo.value);
+      }
+    }
+
+    function loadMemo() {
+      const memo = document.getElementById('family-memo');
+      if (memo) {
+        const saved = localStorage.getItem('gunsan_family_memo');
+        if (saved !== null) {
+          memo.value = saved;
+        }
+      }
+    }
+
+    function copyMemo() {
+      const memo = document.getElementById('family-memo');
+      if (!memo || !memo.value.trim()) {
+        alert('복사할 메모 내용이 없습니다.');
+        return;
+      }
+      navigator.clipboard.writeText(memo.value).then(() => {
+        const toast = document.getElementById('toast');
+        const toastText = toast.querySelector('span');
+        if (toastText) toastText.textContent = '가족 메모 내용이 복사되었습니다!';
+        toast.classList.remove('opacity-0');
+        toast.classList.add('opacity-100');
+        setTimeout(() => {
+          toast.classList.remove('opacity-100');
+          toast.classList.add('opacity-0');
+          if (toastText) toastText.textContent = '일정 및 주요 정보가 클립보드에 복사되었습니다!';
+        }, 2300);
+      });
+    }
+
+    function clearMemo() {
+      if (confirm('작성한 메모를 모두 지우시겠습니까?')) {
+        const memo = document.getElementById('family-memo');
+        if (memo) {
+          memo.value = '';
+          localStorage.removeItem('gunsan_family_memo');
+        }
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      loadChecks();
+      loadMemo();
+    });
 
     function shareTrip() {
       const text = `[🏮 군산 시간여행축제 & 비응항 바다낚시 1박 2일 가족여행]\n\n` +
@@ -1027,14 +1274,14 @@
         `👨‍👩‍👧‍👦 인원: 5명 (아빠, 엄마, 중1, 초5, 초2)\n\n` +
         `[DAY 1]\n` +
         `· 14:00 비응항 도착 & 낚시대 대여\n` +
-        `· 14:30 온가족 비응항 방파제 생활낚시\n` +
+        `· 14:30 온가족 비응항 방파제 생활낚시 (물때: 15~17시 골든타임)\n` +
         `· 17:30 저녁식사 (진갈비 떡갈비 or 아리울해물짬뽕)\n` +
-        `· 19:15 군산 시간여행 축제 야간 콘서트 & 야경\n` +
+        `· 19:15 군산 시간여행 축제 야간 페스티벌 (주차: P1 내항 주차장)\n` +
         `· 21:45 숙소 체크인 (여미랑 / 은파팰리스 / 에이본)\n\n` +
         `[DAY 2]\n` +
         `· 08:30 아침식사 : 한일옥 (소고기무국)\n` +
         `· 09:30 초원사진관 & 근대골목 산책\n` +
-        `· 10:30 시간여행축제 체험 (근대의상, 방탈출, 위봉함)\n` +
+        `· 10:30 시간여행축제 주간 체험 (근대의상, 방탈출, 위봉함)\n` +
         `· 12:45 점심식사 : 빈해원 (물짜장/탕수육) & 이성당 빵 포장\n` +
         `· 14:30 전주 귀가 출발 ➔ 15:30 전주 도착!`;
 
