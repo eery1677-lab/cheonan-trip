@@ -57,31 +57,31 @@
       </div>
     </header>
 
-    <!-- 스티키 탭 네비게이션 -->
-    <nav class="flex border-b border-slate-200 bg-white/95 backdrop-blur-md sticky top-0 z-30 text-[11px] font-bold shadow-xs overflow-x-auto hide-scrollbar">
-      <button onclick="switchTab('schedule')" id="tab-schedule" class="flex-1 min-w-[58px] py-2.5 text-center tab-active border-b-2 transition flex flex-col items-center gap-1 shrink-0">
+    <!-- 스티키 탭 네비게이션 (6개 탭 한눈에 노출) -->
+    <nav class="grid grid-cols-6 border-b border-slate-200 bg-white/95 backdrop-blur-md sticky top-0 z-30 text-[11px] font-bold shadow-xs">
+      <button onclick="switchTab('schedule')" id="tab-schedule" class="py-2.5 text-center tab-active border-b-2 transition flex flex-col items-center justify-center gap-0.5">
         <i class="fa-solid fa-route text-sm"></i>
-        <span>전체일정</span>
+        <span>일정</span>
       </button>
-      <button onclick="switchTab('fishing')" id="tab-fishing" class="flex-1 min-w-[58px] py-2.5 text-center tab-inactive border-b-2 transition flex flex-col items-center gap-1 shrink-0">
+      <button onclick="switchTab('fishing')" id="tab-fishing" class="py-2.5 text-center tab-inactive border-b-2 transition flex flex-col items-center justify-center gap-0.5">
         <i class="fa-solid fa-fish-fins text-sm"></i>
-        <span>비응항낚시</span>
+        <span>낚시</span>
       </button>
-      <button onclick="switchTab('festival')" id="tab-festival" class="flex-1 min-w-[58px] py-2.5 text-center tab-inactive border-b-2 transition flex flex-col items-center gap-1 shrink-0">
+      <button onclick="switchTab('festival')" id="tab-festival" class="py-2.5 text-center tab-inactive border-b-2 transition flex flex-col items-center justify-center gap-0.5">
         <i class="fa-solid fa-masks-theater text-sm"></i>
-        <span>시간여행축제</span>
+        <span>축제</span>
       </button>
-      <button onclick="switchTab('hotel')" id="tab-hotel" class="flex-1 min-w-[58px] py-2.5 text-center tab-inactive border-b-2 transition flex flex-col items-center gap-1 shrink-0">
+      <button onclick="switchTab('hotel')" id="tab-hotel" class="py-2.5 text-center tab-inactive border-b-2 transition flex flex-col items-center justify-center gap-0.5">
         <i class="fa-solid fa-hotel text-sm"></i>
-        <span>추천숙소</span>
+        <span>숙소</span>
       </button>
-      <button onclick="switchTab('food')" id="tab-food" class="flex-1 min-w-[58px] py-2.5 text-center tab-inactive border-b-2 transition flex flex-col items-center gap-1 shrink-0">
+      <button onclick="switchTab('food')" id="tab-food" class="py-2.5 text-center tab-inactive border-b-2 transition flex flex-col items-center justify-center gap-0.5">
         <i class="fa-solid fa-utensils text-sm"></i>
-        <span>맛집리스트</span>
+        <span>맛집</span>
       </button>
-      <button onclick="switchTab('checklist')" id="tab-checklist" class="flex-1 min-w-[58px] py-2.5 text-center tab-inactive border-b-2 transition flex flex-col items-center gap-1 shrink-0">
-        <i class="fa-solid fa-clipboard-check text-sm"></i>
-        <span>준비·메모</span>
+      <button onclick="switchTab('checklist')" id="tab-checklist" class="py-2.5 text-center tab-inactive border-b-2 transition flex flex-col items-center justify-center gap-0.5 bg-emerald-50/50">
+        <i class="fa-solid fa-clipboard-check text-sm text-emerald-600"></i>
+        <span class="text-emerald-700 font-extrabold">준비·메모</span>
       </button>
     </nav>
 
@@ -98,6 +98,20 @@
             전주 송천동(13시) ➔ 비응항 방파제 낚시 ➔ 저녁식사 ➔ 시간여행축제 야경·콘서트 ➔ 숙소 휴식 ➔ 2일차 한일옥 아침 ➔ 근대역사거리 축제 체험 ➔ 점심식사 ➔ 전주 귀가!
           </span>
         </div>
+      </div>
+
+      <!-- 준비물 & 메모 퀵 배너 -->
+      <div onclick="switchTab('checklist')" class="bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-600 text-white rounded-2xl p-3.5 shadow-sm flex items-center justify-between cursor-pointer hover:opacity-95 transition active:scale-98">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-xl bg-white/20 flex items-center justify-center text-white shrink-0">
+            <i class="fa-solid fa-clipboard-check text-base"></i>
+          </div>
+          <div>
+            <div class="text-[10px] text-emerald-100 font-bold">상비약 · 옷 · 낚시용품 챙기기 & 메모</div>
+            <div class="text-xs font-black">🎒 여행 준비물 체크리스트 & 메모장 열기 ➔</div>
+          </div>
+        </div>
+        <i class="fa-solid fa-chevron-right text-xs text-white/80"></i>
       </div>
 
       <!-- DAY 1 카드 -->
@@ -1179,10 +1193,10 @@
         const content = document.getElementById('content-' + tab);
         if (btn && content) {
           if (tab === tabId) {
-            btn.className = 'flex-1 min-w-[58px] py-2.5 text-center tab-active border-b-2 transition flex flex-col items-center gap-1 shrink-0';
+            btn.className = 'py-2.5 text-center tab-active border-b-2 transition flex flex-col items-center justify-center gap-0.5';
             content.classList.remove('hidden');
           } else {
-            btn.className = 'flex-1 min-w-[58px] py-2.5 text-center tab-inactive border-b-2 transition flex flex-col items-center gap-1 shrink-0';
+            btn.className = 'py-2.5 text-center tab-inactive border-b-2 transition flex flex-col items-center justify-center gap-0.5';
             content.classList.add('hidden');
           }
         }
