@@ -54,6 +54,19 @@
           <span class="bg-pink-400 text-white px-2.5 py-1 rounded-lg font-bold shadow-sm">👧 초5 (딸)</span>
           <span class="bg-emerald-400 text-slate-900 px-2.5 py-1 rounded-lg font-black shadow-sm">👶 초2 (막내)</span>
         </div>
+
+        <!-- 실시간 출발 카운트다운 -->
+        <div class="mt-3.5 bg-black/25 backdrop-blur-md rounded-2xl p-2.5 border border-white/15 flex items-center justify-between">
+          <div class="text-[11px] text-amber-200 font-bold flex items-center gap-1.5 pl-1">
+            <i class="fa-solid fa-stopwatch animate-pulse text-amber-300"></i> 출발 카운트다운
+          </div>
+          <div class="flex items-center gap-1 text-xs font-black tracking-wide text-white">
+            <span class="bg-white/20 px-2 py-0.5 rounded-md" id="cd-days">0일</span>
+            <span class="bg-white/20 px-2 py-0.5 rounded-md" id="cd-hours">00시</span>
+            <span class="bg-white/20 px-2 py-0.5 rounded-md" id="cd-mins">00분</span>
+            <span class="bg-amber-400 text-slate-900 px-2 py-0.5 rounded-md shadow-xs" id="cd-secs">00초</span>
+          </div>
+        </div>
       </div>
     </header>
 
@@ -97,6 +110,24 @@
           <span class="text-slate-600 leading-relaxed block">
             전주 송천동(13시) ➔ 비응항 방파제 낚시 ➔ 저녁식사 ➔ 시간여행축제 야경·콘서트 ➔ 숙소 휴식 ➔ 2일차 한일옥 아침 ➔ 근대역사거리 축제 체험 ➔ 점심식사 ➔ 전주 귀가!
           </span>
+        </div>
+      </div>
+
+      <!-- 날씨 & 체감온도 위젯 -->
+      <div class="bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-2xl p-3.5 shadow-xs flex items-center justify-between text-xs">
+        <div class="flex items-center gap-2.5">
+          <div class="w-9 h-9 rounded-xl bg-amber-500 text-white flex items-center justify-center text-lg shrink-0 shadow-xs">
+            <i class="fa-solid fa-cloud-sun"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-1.5 font-black text-slate-800">
+              <span>군산 10월 가을 날씨</span>
+              <span class="text-amber-800 bg-amber-200 text-[10px] px-1.5 py-0.5 rounded-md font-extrabold">14℃ ~ 22℃ 쾌청</span>
+            </div>
+            <p class="text-[11px] text-slate-600 mt-0.5 leading-relaxed">
+              낮에는 온화하나, 비응항 바닷가와 야간 축제장은 <strong>바닷바람으로 체감온도가 3~4℃ 낮아 쌀쌀</strong>합니다. 겉옷(바람막이) 필수!
+            </p>
+          </div>
         </div>
       </div>
 
@@ -456,64 +487,140 @@
         </a>
       </div>
 
-      <!-- 10/4(일) 야간 즐길거리 -->
-      <div class="border border-amber-200 bg-amber-50/40 rounded-3xl p-5 shadow-sm space-y-3">
+      <!-- 10/4(일) 야간 프로그램 타임테이블 -->
+      <div class="border-2 border-amber-300 bg-amber-50/50 rounded-3xl p-5 shadow-sm space-y-3.5">
         <div class="flex items-center justify-between">
-          <h4 class="font-black text-amber-900 text-sm flex items-center gap-1.5">
-            <i class="fa-solid fa-moon text-amber-600"></i> 10월 4일(일) 야간 프로그램
+          <h4 class="font-black text-amber-950 text-sm flex items-center gap-1.5">
+            <i class="fa-solid fa-moon text-amber-600 text-base"></i> 10월 4일(일) 야간 프로그램 상세 시간표
           </h4>
-          <span class="text-[10px] bg-amber-200 text-amber-900 font-extrabold px-2 py-0.5 rounded-full">저녁 방문</span>
+          <span class="text-[10px] bg-amber-500 text-white font-black px-2.5 py-0.5 rounded-full shadow-xs">저녁 타임라인</span>
         </div>
-        <ul class="text-xs text-slate-700 space-y-2">
-          <li class="flex items-start gap-2 bg-white p-2.5 rounded-xl border border-amber-100">
-            <i class="fa-solid fa-music text-purple-600 mt-0.5"></i>
+
+        <div class="space-y-2.5 text-xs">
+          <!-- 1. 포토존 & 야시장 -->
+          <div class="bg-white p-3 rounded-2xl border border-amber-200 shadow-xs flex items-start gap-2.5">
+            <span class="font-black text-amber-700 bg-amber-100 px-2 py-0.5 rounded-md text-[11px] shrink-0 mt-0.5">18:00~22:00</span>
             <div>
-              <strong>시간여행 콘서트 :</strong> 정서주, 야다 등 인기가수 축하공연
+              <strong class="text-slate-800 font-extrabold text-xs block">근대 야간 조명 포토존 & 레트로 야시장</strong>
+              <p class="text-[11px] text-slate-500 mt-0.5 leading-relaxed">
+                📍 <strong>장소 :</strong> 시간여행마을 골목길 & 대학로 차 없는 거리<br/>
+                💡 옛 군산의 정취를 담은 레트로 조명 거리 산책, 길거리 간식 부스 및 야간 플리마켓(체험·기념품) 상시 운영
+              </p>
             </div>
-          </li>
-          <li class="flex items-start gap-2 bg-white p-2.5 rounded-xl border border-amber-100">
-            <i class="fa-solid fa-compact-disc text-rose-500 mt-0.5"></i>
+          </div>
+
+          <!-- 2. 밤부두 콩쿠르 -->
+          <div class="bg-white p-3 rounded-2xl border border-amber-200 shadow-xs flex items-start gap-2.5">
+            <span class="font-black text-rose-600 bg-rose-100 px-2 py-0.5 rounded-md text-[11px] shrink-0 mt-0.5">18:30~19:30</span>
             <div>
-              <strong>군산항 밤부두 콩쿠르 & 스트릿 마당 :</strong> 시민과 함께하는 신나는 레트로 경연
+              <strong class="text-slate-800 font-extrabold text-xs block">군산항 밤부두 콩쿠르 & 스트릿 마당</strong>
+              <p class="text-[11px] text-slate-500 mt-0.5 leading-relaxed">
+                📍 <strong>장소 :</strong> 구 시청광장 특설무대 & 거리 버스킹존<br/>
+                🎤 관광객과 시민들이 함께 즐기는 신나는 레트로 가요 경연대회 및 거리 댄스 버스킹 퍼포먼스
+              </p>
             </div>
-          </li>
-          <li class="flex items-start gap-2 bg-white p-2.5 rounded-xl border border-amber-100">
-            <i class="fa-solid fa-camera-retro text-amber-600 mt-0.5"></i>
+          </div>
+
+          <!-- 3. 시간여행 콘서트 (메인 무대) -->
+          <div class="bg-gradient-to-r from-amber-500 to-purple-600 text-white p-3.5 rounded-2xl shadow-sm flex items-start gap-2.5">
+            <span class="font-black text-slate-900 bg-amber-300 px-2 py-0.5 rounded-md text-[11px] shrink-0 mt-0.5 shadow-xs">19:30~20:45</span>
             <div>
-              <strong>근대 야간 조명 포토존 & 야시장 :</strong> 옛 정취 가득한 조명 거리와 맛있는 간식 투어
+              <strong class="text-white font-black text-sm block">★ 시간여행 콘서트 (10/4 메인 공연) ★</strong>
+              <p class="text-[11px] text-amber-100 mt-1 leading-relaxed">
+                📍 <strong>장소 :</strong> 구 시청광장 메인 특설무대 (무료 관람)<br/>
+                🌟 <strong>초청 라인업 :</strong> 트롯 요정 <strong>정서주</strong>, 감성 록밴드 <strong>야다</strong> 등 인기 가수의 환상적인 라이브 축하공연!
+              </p>
             </div>
-          </li>
-        </ul>
+          </div>
+
+          <!-- 4. 글로벌 EDM 파티 -->
+          <div class="bg-white p-3 rounded-2xl border border-amber-200 shadow-xs flex items-start gap-2.5">
+            <span class="font-black text-purple-700 bg-purple-100 px-2 py-0.5 rounded-md text-[11px] shrink-0 mt-0.5">20:45~21:30</span>
+            <div>
+              <strong class="text-slate-800 font-extrabold text-xs block">글로벌 레트로 EDM 파티 & 피날레</strong>
+              <p class="text-[11px] text-slate-500 mt-0.5 leading-relaxed">
+                📍 <strong>장소 :</strong> 대학로 차 없는 거리 일원<br/>
+                🎧 온 가족이 함께 뛰며 즐기는 신나는 레트로 EDM 리믹스 비트와 야간 조명 레이저 쇼!
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <!-- 10/5(월) 주간 즐길거리 -->
-      <div class="border border-sky-200 bg-sky-50/40 rounded-3xl p-5 shadow-sm space-y-3">
+      <!-- 10/5(월) 주간 체험 코스 타임테이블 -->
+      <div class="border-2 border-sky-300 bg-sky-50/50 rounded-3xl p-5 shadow-sm space-y-3.5">
         <div class="flex items-center justify-between">
-          <h4 class="font-black text-sky-900 text-sm flex items-center gap-1.5">
-            <i class="fa-solid fa-sun text-amber-500"></i> 10월 5일(월) 주간 체험 코스
+          <h4 class="font-black text-sky-950 text-sm flex items-center gap-1.5">
+            <i class="fa-solid fa-sun text-amber-500 text-base"></i> 10월 5일(월) 주간 체험 상세 시간표
           </h4>
-          <span class="text-[10px] bg-sky-200 text-sky-900 font-extrabold px-2 py-0.5 rounded-full">낮 방문</span>
+          <span class="text-[10px] bg-sky-600 text-white font-black px-2.5 py-0.5 rounded-full shadow-xs">낮 타임라인</span>
         </div>
-        <ul class="text-xs text-slate-700 space-y-2">
-          <li class="flex items-start gap-2 bg-white p-2.5 rounded-xl border border-sky-100">
-            <i class="fa-solid fa-vest text-teal-600 mt-0.5"></i>
+
+        <div class="space-y-2.5 text-xs">
+          <!-- 1. 위봉함 관람 -->
+          <div class="bg-white p-3 rounded-2xl border border-sky-200 shadow-xs flex items-start gap-2.5">
+            <span class="font-black text-blue-700 bg-blue-100 px-2 py-0.5 rounded-md text-[11px] shrink-0 mt-0.5">09:30~17:00</span>
             <div>
-              <strong>근대의상 체험실 :</strong> 개화기 신사/숙녀 옷 입고 가족 인생사진 남기기
+              <strong class="text-slate-800 font-extrabold text-xs block">진포해양테마공원 & 위봉함 676호 관람</strong>
+              <p class="text-[11px] text-slate-500 mt-0.5 leading-relaxed">
+                📍 <strong>장소 :</strong> 군산시 내항2길 32 (바닷가 앞 P4 주차장 앞)<br/>
+                🎫 <strong>입장료 :</strong> 성인 3,000원 / 청소년 2,000원 / 어린이 1,000원<br/>
+                🚢 <strong>내용 :</strong> 실제 4,200톤급 상륙함 내부 전시관 관람, 해군 군함 갑판 체험, 야외 장갑차·전투기 전시 (남자아이들 만족도 최고!)<br/>
+                <span class="text-blue-600 font-bold">※ 축제 기간(10/2~10/5) 정상 개방 운영 (문의: 063-454-7870)</span>
+              </p>
             </div>
-          </li>
-          <li class="flex items-start gap-2 bg-white p-2.5 rounded-xl border border-sky-100">
-            <i class="fa-solid fa-key text-amber-600 mt-0.5"></i>
+          </div>
+
+          <!-- 2. 근대의상 체험실 -->
+          <div class="bg-white p-3 rounded-2xl border border-sky-200 shadow-xs flex items-start gap-2.5">
+            <span class="font-black text-teal-700 bg-teal-100 px-2 py-0.5 rounded-md text-[11px] shrink-0 mt-0.5">10:00~17:00</span>
             <div>
-              <strong>밀서 방탈출 미션 :</strong> '식량영단의 밀서' (구 조선식량영단, 아이들 참여도 1위)
+              <strong class="text-slate-800 font-extrabold text-xs block">1930 근대의상실 체험 (모던보이·모던걸)</strong>
+              <p class="text-[11px] text-slate-500 mt-0.5 leading-relaxed">
+                📍 <strong>장소 :</strong> 근대역사박물관 광장 의상 대여 부스<br/>
+                👗 <strong>대여비 :</strong> 1벌당 약 5,000원~10,000원 (모자/가방 소품 포함)<br/>
+                📸 <strong>내용 :</strong> 개화기 신사·숙녀 옷을 차려입고 초원사진관과 신흥동 일본식 가옥 거리에서 평생 남을 가족 인생사진 촬영!
+              </p>
             </div>
-          </li>
-          <li class="flex items-start gap-2 bg-white p-2.5 rounded-xl border border-sky-100">
-            <i class="fa-solid fa-ship text-blue-600 mt-0.5"></i>
+          </div>
+
+          <!-- 3. 방탈출 미션 -->
+          <div class="bg-white p-3 rounded-2xl border border-sky-200 shadow-xs flex items-start gap-2.5">
+            <span class="font-black text-amber-700 bg-amber-100 px-2 py-0.5 rounded-md text-[11px] shrink-0 mt-0.5">10:00~20:00</span>
             <div>
-              <strong>진포해양테마공원 위봉함 :</strong> 퇴역 상륙함 내부 전시 및 전투기 관람
+              <strong class="text-slate-800 font-extrabold text-xs block">체험형 방탈출 '식량영단의 밀서'</strong>
+              <p class="text-[11px] text-slate-500 mt-0.5 leading-relaxed">
+                📍 <strong>장소 :</strong> 구 조선식량영단 군산출장소 (영화동)<br/>
+                🔑 <strong>참가비 :</strong> 1인당 2,000원 (현장 접수 가능)<br/>
+                🕵️ <strong>내용 :</strong> 일제 수탈 건물에서 5분 안에 독립군의 비밀 밀서를 찾아 탈출하는 실감형 추리 게임 (아이들 몰입도 1위!)
+              </p>
             </div>
-          </li>
-        </ul>
+          </div>
+
+          <!-- 4. 3.5 만세 퍼포먼스 -->
+          <div class="bg-white p-3 rounded-2xl border border-sky-200 shadow-xs flex items-start gap-2.5">
+            <span class="font-black text-rose-700 bg-rose-100 px-2 py-0.5 rounded-md text-[11px] shrink-0 mt-0.5">11:00~12:00</span>
+            <div>
+              <strong class="text-slate-800 font-extrabold text-xs block">거리 대형 퍼포먼스 '우리 모두 3·5만세'</strong>
+              <p class="text-[11px] text-slate-500 mt-0.5 leading-relaxed">
+                📍 <strong>장소 :</strong> 대학로 차 없는 거리 메인 스트리트<br/>
+                🇰🇷 1919년 군산의 3·5 만세 운동을 재현하는 대규모 태극기 게양 거리 플래시몹 퍼레이드 (아이들에게 뜻깊은 역사 체험)
+              </p>
+            </div>
+          </div>
+
+          <!-- 5. 추억의 골목놀이 -->
+          <div class="bg-white p-3 rounded-2xl border border-sky-200 shadow-xs flex items-start gap-2.5">
+            <span class="font-black text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-md text-[11px] shrink-0 mt-0.5">10:00~17:00</span>
+            <div>
+              <strong class="text-slate-800 font-extrabold text-xs block">시간여행공예공작소 & 추억의 골목놀이</strong>
+              <p class="text-[11px] text-slate-500 mt-0.5 leading-relaxed">
+                📍 <strong>장소 :</strong> 백년광장 일원<br/>
+                🎯 달고나 뽑기, 대형 윷놀이, 딱지치기, 제기차기, 비석치기 등 온 가족이 함께 즐기는 무료 전통 놀이터
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- 축제장 & 주차장 상세 위치 약도 지도 (그림 지도) -->
@@ -1164,6 +1271,73 @@
           </button>
         </div>
       </div>
+
+      <!-- 6. 5인 가족 예상 여행 경비 스마트 계산기 -->
+      <div class="border border-slate-200 bg-white rounded-3xl p-5 shadow-sm space-y-3.5">
+        <div class="flex items-center justify-between">
+          <h4 class="font-black text-slate-800 text-sm flex items-center gap-2">
+            <i class="fa-solid fa-calculator text-teal-600 text-base"></i> 5인 가족 예상 여행 경비 계산기
+          </h4>
+          <span class="text-[10px] bg-teal-100 text-teal-800 font-extrabold px-2 py-0.5 rounded-full">실시간 합산</span>
+        </div>
+        <p class="text-[11px] text-slate-500">
+          금액을 직접 터치하여 변경해 보세요! 총 예상 경비가 실시간으로 자동 합산됩니다.
+        </p>
+
+        <div class="space-y-2 text-xs text-slate-700">
+          <div class="flex items-center justify-between p-2.5 bg-slate-50 rounded-xl">
+            <span class="font-bold flex items-center gap-1.5"><i class="fa-solid fa-hotel text-amber-500"></i> 숙박비 (1박 기준)</span>
+            <div class="flex items-center gap-1">
+              <input type="number" id="cost-hotel" value="180000" oninput="calcBudget()" class="w-24 text-right font-black text-slate-800 bg-white px-2 py-1 border border-slate-200 rounded-lg text-xs">
+              <span class="font-bold text-slate-500">원</span>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between p-2.5 bg-slate-50 rounded-xl">
+            <span class="font-bold flex items-center gap-1.5"><i class="fa-solid fa-utensils text-rose-500"></i> 식비 (저녁·아침·점심·빵)</span>
+            <div class="flex items-center gap-1">
+              <input type="number" id="cost-food" value="220000" oninput="calcBudget()" class="w-24 text-right font-black text-slate-800 bg-white px-2 py-1 border border-slate-200 rounded-lg text-xs">
+              <span class="font-bold text-slate-500">원</span>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between p-2.5 bg-slate-50 rounded-xl">
+            <span class="font-bold flex items-center gap-1.5"><i class="fa-solid fa-fish-fins text-sky-500"></i> 낚시대 대여 & 채비·미끼</span>
+            <div class="flex items-center gap-1">
+              <input type="number" id="cost-fishing" value="35000" oninput="calcBudget()" class="w-24 text-right font-black text-slate-800 bg-white px-2 py-1 border border-slate-200 rounded-lg text-xs">
+              <span class="font-bold text-slate-500">원</span>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between p-2.5 bg-slate-50 rounded-xl">
+            <span class="font-bold flex items-center gap-1.5"><i class="fa-solid fa-masks-theater text-purple-500"></i> 축제 체험비 (의상/방탈출/위봉함)</span>
+            <div class="flex items-center gap-1">
+              <input type="number" id="cost-festival" value="45000" oninput="calcBudget()" class="w-24 text-right font-black text-slate-800 bg-white px-2 py-1 border border-slate-200 rounded-lg text-xs">
+              <span class="font-bold text-slate-500">원</span>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between p-2.5 bg-slate-50 rounded-xl">
+            <span class="font-bold flex items-center gap-1.5"><i class="fa-solid fa-gas-pump text-emerald-500"></i> 차량 유류비 & 톨게이트</span>
+            <div class="flex items-center gap-1">
+              <input type="number" id="cost-traffic" value="30000" oninput="calcBudget()" class="w-24 text-right font-black text-slate-800 bg-white px-2 py-1 border border-slate-200 rounded-lg text-xs">
+              <span class="font-bold text-slate-500">원</span>
+            </div>
+          </div>
+
+          <!-- 총 예상 경비 합계 -->
+          <div class="p-3.5 bg-gradient-to-r from-teal-600 via-emerald-600 to-sky-600 text-white rounded-2xl flex items-center justify-between shadow-xs mt-3">
+            <div>
+              <span class="text-[11px] text-teal-100 font-bold block">5인 가족 총 예상 경비</span>
+              <span class="text-[10px] text-teal-200">※ 군산 주요 주차장 전액 무료!</span>
+            </div>
+            <div class="text-right">
+              <span id="total-budget" class="text-lg font-black tracking-tight text-white">510,000</span>
+              <span class="text-xs font-bold text-teal-100">원</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- 플로팅 카카오톡/문자 공유 바 -->
@@ -1276,9 +1450,57 @@
       }
     }
 
+    function calcBudget() {
+      const hotel = Number(document.getElementById('cost-hotel')?.value) || 0;
+      const food = Number(document.getElementById('cost-food')?.value) || 0;
+      const fishing = Number(document.getElementById('cost-fishing')?.value) || 0;
+      const festival = Number(document.getElementById('cost-festival')?.value) || 0;
+      const traffic = Number(document.getElementById('cost-traffic')?.value) || 0;
+      const total = hotel + food + fishing + festival + traffic;
+      const totalEl = document.getElementById('total-budget');
+      if (totalEl) {
+        totalEl.textContent = total.toLocaleString();
+      }
+    }
+
+    function startCountdown() {
+      const targetDate = new Date('2026-10-04T13:00:00+09:00').getTime();
+      function update() {
+        const now = new Date().getTime();
+        const diff = targetDate - now;
+        const daysEl = document.getElementById('cd-days');
+        const hoursEl = document.getElementById('cd-hours');
+        const minsEl = document.getElementById('cd-mins');
+        const secsEl = document.getElementById('cd-secs');
+        if (!daysEl) return;
+
+        if (diff <= 0) {
+          daysEl.textContent = 'D-DAY';
+          hoursEl.textContent = '출발!';
+          minsEl.textContent = '';
+          secsEl.textContent = '';
+          return;
+        }
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+        daysEl.textContent = 'D-' + days;
+        hoursEl.textContent = String(hours).padStart(2, '0') + '시';
+        minsEl.textContent = String(mins).padStart(2, '0') + '분';
+        secsEl.textContent = String(secs).padStart(2, '0') + '초';
+      }
+      update();
+      setInterval(update, 1000);
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
       loadChecks();
       loadMemo();
+      calcBudget();
+      startCountdown();
     });
 
     function shareTrip() {
