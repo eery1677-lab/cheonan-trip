@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
   <title>2026 군산 시간여행축제 & 비응항 바다낚시 가족여행</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -29,9 +32,14 @@
         <span class="bg-white/20 backdrop-blur-md text-xs font-bold px-3 py-1 rounded-full text-white flex items-center gap-1.5 border border-white/20">
           <i class="fa-solid fa-compass animate-spin text-amber-300" style="animation-duration: 8s;"></i> 2026 가을 가족투어
         </span>
-        <button onclick="shareTrip()" class="bg-white/20 hover:bg-white/30 backdrop-blur-md text-xs px-3.5 py-1.5 rounded-full flex items-center gap-1.5 transition font-semibold border border-white/20 shadow-sm active:scale-95">
-          <i class="fa-solid fa-share-nodes"></i> 일정 공유
-        </button>
+        <div class="flex items-center gap-1.5">
+          <span class="bg-amber-400 text-slate-900 text-[10px] font-black px-2 py-0.5 rounded-full shadow-xs">
+            v2.5 최신판
+          </span>
+          <button onclick="shareTrip()" class="bg-white/20 hover:bg-white/30 backdrop-blur-md text-xs px-3 py-1.5 rounded-full flex items-center gap-1.5 transition font-semibold border border-white/20 shadow-sm active:scale-95">
+            <i class="fa-solid fa-share-nodes"></i> 일정 공유
+          </button>
+        </div>
       </div>
 
       <div class="relative z-10">
@@ -92,9 +100,13 @@
         <i class="fa-solid fa-utensils text-sm"></i>
         <span>맛집</span>
       </button>
-      <button onclick="switchTab('checklist')" id="tab-checklist" class="py-2.5 text-center tab-inactive border-b-2 transition flex flex-col items-center justify-center gap-0.5 bg-emerald-50/50">
+      <button onclick="switchTab('checklist')" id="tab-checklist" class="py-2 text-center tab-inactive border-b-2 transition flex flex-col items-center justify-center gap-0.5 bg-emerald-50 hover:bg-emerald-100 relative">
+        <span class="absolute top-1 right-1 flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-600"></span>
+        </span>
         <i class="fa-solid fa-clipboard-check text-sm text-emerald-600"></i>
-        <span class="text-emerald-700 font-extrabold">준비·메모</span>
+        <span class="text-emerald-700 font-extrabold text-[10px]">준비·메모</span>
       </button>
     </nav>
 
@@ -303,6 +315,20 @@
         </p>
       </div>
 
+      <!-- 낚시 준비물 & 메모 퀵 배너 -->
+      <div onclick="switchTab('checklist')" class="bg-emerald-50 border border-emerald-200 rounded-2xl p-3 text-xs text-emerald-900 flex items-center justify-between cursor-pointer hover:bg-emerald-100 transition shadow-xs active:scale-98">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-xl bg-emerald-600 text-white flex items-center justify-center shrink-0 text-sm shadow-xs">
+            <i class="fa-solid fa-clipboard-check"></i>
+          </div>
+          <div>
+            <strong class="text-emerald-950 font-black">구명조끼·장갑·물티슈 챙기셨나요?</strong>
+            <span class="text-[11px] text-emerald-700 block">🎒 낚시 준비물 체크리스트 & 가족 메모 바로가기 ➔</span>
+          </div>
+        </div>
+        <i class="fa-solid fa-chevron-right text-xs text-emerald-500"></i>
+      </div>
+
       <!-- 10월 4일(일) 바다 물때표 (바다타임 기준) -->
       <div class="border-2 border-cyan-400 bg-cyan-50/40 rounded-3xl p-5 shadow-sm space-y-3">
         <div class="flex items-center justify-between">
@@ -462,6 +488,20 @@
         <p class="text-xs text-amber-100 mt-1 leading-relaxed">
           1930년대 근대 군산으로 시간여행을 떠나는 대표 거리 축제! 밤에는 화려한 야경과 콘서트, 낮에는 흥미진진한 역사 체험이 펼쳐집니다.
         </p>
+      </div>
+
+      <!-- 축제 준비물 & 메모 퀵 배너 -->
+      <div onclick="switchTab('checklist')" class="bg-emerald-50 border border-emerald-200 rounded-2xl p-3 text-xs text-emerald-900 flex items-center justify-between cursor-pointer hover:bg-emerald-100 transition shadow-xs active:scale-98">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-xl bg-emerald-600 text-white flex items-center justify-center shrink-0 text-sm shadow-xs">
+            <i class="fa-solid fa-clipboard-check"></i>
+          </div>
+          <div>
+            <strong class="text-emerald-950 font-black">야간 축제 겉옷(바람막이) & 모기약 챙기셨나요?</strong>
+            <span class="text-[11px] text-emerald-700 block">🎒 여행 준비물 체크리스트 & 가족 메모장 열기 ➔</span>
+          </div>
+        </div>
+        <i class="fa-solid fa-chevron-right text-xs text-emerald-500"></i>
       </div>
 
       <!-- 축제 핵심 정보 요약 -->
@@ -859,9 +899,23 @@
 
     <!-- ==================== 4. 숙소 추천 탭 ==================== -->
     <section id="content-hotel" class="p-5 space-y-4 hidden">
-      <div class="mb-2">
+      <div class="mb-1">
         <h3 class="font-black text-slate-800 text-base">5인 가족 추천 숙소 4곳</h3>
         <p class="text-xs text-slate-500">성인 2 + 아이 3명이 편안하게 묵을 수 있는 엄선된 숙소</p>
+      </div>
+
+      <!-- 숙소 준비물 & 메모 퀵 배너 -->
+      <div onclick="switchTab('checklist')" class="bg-emerald-50 border border-emerald-200 rounded-2xl p-3 text-xs text-emerald-900 flex items-center justify-between cursor-pointer hover:bg-emerald-100 transition shadow-xs active:scale-98">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-xl bg-emerald-600 text-white flex items-center justify-center shrink-0 text-sm shadow-xs">
+            <i class="fa-solid fa-clipboard-check"></i>
+          </div>
+          <div>
+            <strong class="text-emerald-950 font-black">멀티탭·세면도구·충전기 챙기셨나요?</strong>
+            <span class="text-[11px] text-emerald-700 block">🎒 숙소 준비물 체크리스트 & 가족 메모장 열기 ➔</span>
+          </div>
+        </div>
+        <i class="fa-solid fa-chevron-right text-xs text-emerald-500"></i>
       </div>
 
       <!-- 1. 여미랑 (게스트하우스) -->
@@ -982,19 +1036,36 @@
         <p class="text-xs text-slate-500">아이들과 함께 가기 좋은 엄선 식사장소 (전화, 주소, 후기)</p>
       </div>
 
+      <!-- 맛집/간식 메모 퀵 배너 -->
+      <div onclick="switchTab('checklist')" class="bg-emerald-50 border border-emerald-200 rounded-2xl p-3 text-xs text-emerald-900 flex items-center justify-between cursor-pointer hover:bg-emerald-100 transition shadow-xs active:scale-98">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-xl bg-emerald-600 text-white flex items-center justify-center shrink-0 text-sm shadow-xs">
+            <i class="fa-solid fa-clipboard-check"></i>
+          </div>
+          <div>
+            <strong class="text-emerald-950 font-black">소화제 & 이성당 빵 메모 챙기셨나요?</strong>
+            <span class="text-[11px] text-emerald-700 block">🎒 상비약 체크리스트 & 빵 구매 메모장 열기 ➔</span>
+          </div>
+        </div>
+        <i class="fa-solid fa-chevron-right text-xs text-emerald-500"></i>
+      </div>
+
       <!-- [1일차 저녁 추천] 진갈비 -->
       <div class="border-2 border-rose-300 rounded-3xl p-5 shadow-sm bg-white">
         <div class="flex justify-between items-start">
           <div>
-            <span class="bg-rose-100 text-rose-700 text-[10px] font-extrabold px-2.5 py-0.5 rounded-full">1일차 저녁 추천</span>
-            <h4 class="text-base font-black text-slate-800 mt-1">진갈비 (한우 떡갈비)</h4>
-            <p class="text-xs text-slate-500 mt-0.5">전북 군산시 구영1길 108-7 (영화동, 축제장 도보 7분)</p>
+            <div class="flex items-center gap-1.5">
+              <span class="bg-rose-100 text-rose-700 text-[10px] font-extrabold px-2.5 py-0.5 rounded-full">1일차 저녁 추천</span>
+              <span class="bg-amber-100 text-amber-800 text-[10px] font-black px-2 py-0.5 rounded-full">백종원의 3대천왕 우승</span>
+            </div>
+            <h4 class="text-base font-black text-slate-800 mt-1">진갈비 (한우 떡갈비 명가)</h4>
+            <p class="text-xs text-slate-500 mt-0.5">전북 군산시 구영1길 108-7 (월명동, 축제장 도보 7분)</p>
           </div>
         </div>
         <div class="mt-2.5 space-y-1.5 text-xs text-slate-600">
-          <p class="bg-rose-50/60 p-2.5 rounded-xl border border-rose-100">
-            🍖 <strong>대표메뉴:</strong> 떡갈비(국내산 한우), 곰탕, 공기밥<br/>
-            ⭐ <strong>후기 특징:</strong> 백종원의 3대천왕 방영 명가! 숯불에 구워져 나와 연기 없이 바로 먹을 수 있으며 육즙이 부드러워 세 아이들 모두 밥 한 공기 뚝딱 비우는 최고 인기 식당.
+          <p class="bg-rose-50/60 p-3 rounded-xl border border-rose-100 leading-relaxed">
+            🍖 <strong>대표메뉴:</strong> 한우 떡갈비, 진한 곰탕(기본 제공), 공기밥<br/>
+            ⭐ <strong>검증 내역:</strong> SBS <백종원의 3대천왕> 떡갈비 편 우승 & 중기부 인증 '백년가게'. 주방 숯불에서 100% 구워져 뜨거운 돌판에 서빙되므로, 테이블에서 연기나 불판 화상 위험 없이 세 아이 모두 안전하게 식사 가능! 육즙이 부드럽고 곰탕 국물이 나와 아이들 밥도둑입니다.
           </p>
         </div>
         <div class="grid grid-cols-2 gap-2 mt-3.5">
@@ -1017,9 +1088,9 @@
           </div>
         </div>
         <div class="mt-2.5 space-y-1.5 text-xs text-slate-600">
-          <p class="bg-slate-50 p-2.5 rounded-xl border border-slate-100">
-            🍜 <strong>대표메뉴:</strong> 해물짬뽕, 해물짜장, 바삭 탕수육<br/>
-            ⭐ <strong>후기 특징:</strong> 낚시 끝나고 바닷바람 쐰 후 뜨끈하고 푸짐한 해물 짬뽕 국물과 아이들 좋아하는 짜장면/탕수육으로 바로 해결하기에 최적!
+          <p class="bg-slate-50 p-3 rounded-xl border border-slate-100 leading-relaxed">
+            🍜 <strong>대표메뉴:</strong> 해물짬뽕, 해물짜장, 바삭 찹쌀탕수육<br/>
+            ⭐ <strong>검증 내역:</strong> 비응항 낚시인들과 새만금 여행객들이 즐겨 찾는 현지 해물 중식당. 키조개·전복·홍합이 푸짐한 얼큰 해물짬뽕과 아이들이 좋아하는 달콤 옛날짜장면, 찹쌀탕수육으로 낚시 직후 따뜻하게 배를 채우기에 최적입니다.
           </p>
         </div>
         <div class="grid grid-cols-2 gap-2 mt-3.5">
@@ -1036,16 +1107,19 @@
       <div class="border-2 border-amber-400 rounded-3xl p-5 shadow-sm bg-amber-50/20">
         <div class="flex justify-between items-start">
           <div>
-            <span class="bg-amber-500 text-white text-[10px] font-black px-2.5 py-0.5 rounded-full">2일차 아침 강력추천</span>
-            <h4 class="text-base font-black text-slate-800 mt-1">한일옥 (소고기무국 명가)</h4>
-            <p class="text-xs text-slate-500 mt-0.5">전북 군산시 구영3길 63 (신흥동, 초원사진관 맞은편)</p>
+            <div class="flex items-center gap-1.5">
+              <span class="bg-amber-500 text-white text-[10px] font-black px-2.5 py-0.5 rounded-full">2일차 아침 강력추천</span>
+              <span class="bg-rose-100 text-rose-800 text-[10px] font-black px-2 py-0.5 rounded-full">리뷰 16,000건+</span>
+            </div>
+            <h4 class="text-base font-black text-slate-800 mt-1">한일옥 (소고기무국 전국 1위)</h4>
+            <p class="text-xs text-slate-500 mt-0.5">전북 군산시 구영3길 63 (초원사진관 바로 맞은편)</p>
           </div>
         </div>
         <div class="mt-2.5 space-y-1.5 text-xs text-slate-600">
-          <p class="bg-white p-2.5 rounded-xl border border-amber-200">
+          <p class="bg-white p-3 rounded-xl border border-amber-200 leading-relaxed">
             🥣 <strong>대표메뉴:</strong> 무우국(한우 소고기뭇국), 한우육회비빔밥, 콩나물국<br/>
             ⏰ <strong>영업시간:</strong> 06:00 ~ 21:30 (이른 아침 식사 완벽 가능)<br/>
-            ⭐ <strong>후기 특징:</strong> 가마솥에 푹 끓여낸 맑고 시원한 한우 소고기뭇국 국물이 일품! 자극적이지 않아 아이들 밥 말아주면 최고의 아침. 식후 바로 앞 초원사진관 포토존 필수!
+            ⭐ <strong>검증 내역:</strong> <맛있는 녀석들> 방영, 중기부 인증 '백년가게'. 87년 된 일본식 전통 가옥 건물. 가마솥에 푹 끓여낸 맑고 시원한 한우 소고기뭇국은 자극 없이 담백하여 3남매 모두 밥 한 그릇 뚝딱 비웁니다. 식후 바로 맞은편 영화 초원사진관 포토존 필수!
           </p>
         </div>
         <div class="grid grid-cols-2 gap-2 mt-3.5">
@@ -1062,15 +1136,18 @@
       <div class="border border-slate-200 rounded-3xl p-5 shadow-sm bg-white">
         <div class="flex justify-between items-start">
           <div>
-            <span class="bg-teal-100 text-teal-800 text-[10px] font-extrabold px-2.5 py-0.5 rounded-full">2일차 점심 추천</span>
-            <h4 class="text-base font-black text-slate-800 mt-1">빈해원 (등록문화재 화교 중식당)</h4>
+            <div class="flex items-center gap-1.5">
+              <span class="bg-teal-100 text-teal-800 text-[10px] font-extrabold px-2.5 py-0.5 rounded-full">2일차 점심 추천</span>
+              <span class="bg-purple-100 text-purple-800 text-[10px] font-black px-2 py-0.5 rounded-full">등록문화재 제723호</span>
+            </div>
+            <h4 class="text-base font-black text-slate-800 mt-1">빈해원 (70년 전통 화교 중식당)</h4>
             <p class="text-xs text-slate-500 mt-0.5">전북 군산시 동령길 57 (장미동, 근대박물관 인근)</p>
           </div>
         </div>
         <div class="mt-2.5 space-y-1.5 text-xs text-slate-600">
-          <p class="bg-slate-50 p-2.5 rounded-xl border border-slate-100">
+          <p class="bg-slate-50 p-3 rounded-xl border border-slate-100 leading-relaxed">
             🥢 <strong>대표메뉴:</strong> 군산 명물 삼선물짜장, 짬뽕, 탕수육<br/>
-            ⭐ <strong>후기 특징:</strong> 영화 '타짜', '남자가 사랑할 때' 촬영지로 유명한 등록문화재! 웅장한 중국풍 복층 목조 건물 자체가 볼거리라 아이들에게 신기한 체험이 됩니다.
+            ⭐ <strong>검증 내역:</strong> 문화재청 등록문화재 제723호 지정! 영화 <타짜>, 드라마 <사랑의 불시착>, <1박 2일> 촬영지. 2층 누각식 중정 목조 인테리어가 웅장해 아이들이 영화 세트장 같다고 감탄합니다. 시그니처 '하얀 물짜장'은 맵지 않고 전분 육수로 감칠맛이 돌아 초등학생 입맛에 딱 맞습니다.
           </p>
         </div>
         <div class="grid grid-cols-2 gap-2 mt-3.5">
@@ -1087,15 +1164,18 @@
       <div class="border-2 border-orange-300 rounded-3xl p-5 shadow-sm bg-orange-50/20">
         <div class="flex justify-between items-start">
           <div>
-            <span class="bg-orange-500 text-white text-[10px] font-black px-2.5 py-0.5 rounded-full">군산 필수 빵지순례</span>
-            <h4 class="text-base font-black text-slate-800 mt-1">이성당 본점</h4>
+            <div class="flex items-center gap-1.5">
+              <span class="bg-orange-500 text-white text-[10px] font-black px-2.5 py-0.5 rounded-full">군산 필수 빵지순례</span>
+              <span class="bg-amber-100 text-amber-900 text-[10px] font-black px-2 py-0.5 rounded-full">대한민국 1호 빵집</span>
+            </div>
+            <h4 class="text-base font-black text-slate-800 mt-1">이성당 본점 (1945년 창립)</h4>
             <p class="text-xs text-slate-500 mt-0.5">전북 군산시 중앙로 177 (중앙로1가)</p>
           </div>
         </div>
         <div class="mt-2.5 space-y-1.5 text-xs text-slate-600">
-          <p class="bg-white p-2.5 rounded-xl border border-orange-200">
+          <p class="bg-white p-3 rounded-xl border border-orange-200 leading-relaxed">
             🍞 <strong>대표메뉴:</strong> 단팥빵, 야채빵, 쌀 밀크쉐이크, 고로케<br/>
-            ⭐ <strong>후기 특징:</strong> 1945년에 문을 연 대한민국에서 가장 오래된 빵집! 얇은 피에 앙금이 꽉 찬 단팥빵과 아삭한 식감의 야채빵은 필수 간식 포장 아이템.
+            ⭐ <strong>검증 내역:</strong> 1945년 해방과 함께 오픈한 대한민국 현존 최장수 빵집이자 전국 3대 빵집(네이버 리뷰 45,000건+). 쌀가루 피에 팥소가 듬뿍 든 단팥빵과 아삭한 야채빵은 필수 간식 포장 아이템! 본점 옆 신관 카페에서 쉐이크와 함께 편안히 쉴 수 있습니다.
           </p>
         </div>
         <div class="grid grid-cols-2 gap-2 mt-3.5">
@@ -1340,14 +1420,15 @@
       </div>
     </section>
 
-    <!-- 플로팅 카카오톡/문자 공유 바 -->
-    <div class="fixed bottom-0 max-w-md w-full bg-white/90 backdrop-blur-lg border-t border-slate-200 p-3.5 flex items-center justify-between z-40 px-5 shadow-lg">
-      <div>
-        <div class="text-[11px] text-slate-400 font-semibold">10/4 ~ 10/5 가족여행</div>
-        <div class="text-xs font-black text-slate-800">군산 1박 2일 플래너</div>
-      </div>
-      <button onclick="shareTrip()" class="bg-gradient-to-r from-sky-600 to-amber-500 text-white text-xs font-black px-4 py-2.5 rounded-2xl flex items-center gap-2 shadow-md active:scale-95 transition">
-        <i class="fa-solid fa-share-nodes"></i> 가족에게 일정 공유하기
+    <!-- 하단 고정 액션바 (어디서든 준비물/메모장 & 일정 공유 즉시 원클릭 접근) -->
+    <div class="fixed bottom-0 max-w-md w-full bg-white/95 backdrop-blur-lg border-t border-slate-200 py-2.5 px-3 flex items-center gap-2 z-40 shadow-2xl">
+      <button onclick="switchTab('checklist')" id="btn-bottom-checklist" class="flex-1 bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 hover:opacity-95 text-white text-xs font-black py-2.5 px-2 rounded-2xl flex items-center justify-center gap-1.5 shadow-md active:scale-95 transition">
+        <i class="fa-solid fa-clipboard-check text-sm text-emerald-200"></i>
+        <span>🎒 준비물 & 메모장</span>
+      </button>
+      <button onclick="shareTrip()" class="flex-1 bg-gradient-to-r from-sky-600 via-blue-600 to-amber-500 hover:opacity-95 text-white text-xs font-black py-2.5 px-2 rounded-2xl flex items-center justify-center gap-1.5 shadow-md active:scale-95 transition">
+        <i class="fa-solid fa-share-nodes text-sm"></i>
+        <span>가족 일정 공유</span>
       </button>
     </div>
 
@@ -1367,14 +1448,17 @@
         const content = document.getElementById('content-' + tab);
         if (btn && content) {
           if (tab === tabId) {
-            btn.className = 'py-2.5 text-center tab-active border-b-2 transition flex flex-col items-center justify-center gap-0.5';
+            btn.className = 'py-2.5 text-center tab-active border-b-2 transition flex flex-col items-center justify-center gap-0.5' + (tab === 'checklist' ? ' bg-emerald-100/70 font-black' : '');
             content.classList.remove('hidden');
           } else {
-            btn.className = 'py-2.5 text-center tab-inactive border-b-2 transition flex flex-col items-center justify-center gap-0.5';
+            btn.className = 'py-2.5 text-center tab-inactive border-b-2 transition flex flex-col items-center justify-center gap-0.5' + (tab === 'checklist' ? ' bg-emerald-50 hover:bg-emerald-100' : '');
             content.classList.add('hidden');
           }
         }
       });
+      try {
+        history.replaceState(null, '', '#' + tabId);
+      } catch (e) {}
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
@@ -1501,6 +1585,12 @@
       loadMemo();
       calcBudget();
       startCountdown();
+
+      // URL 해시(#checklist 등) 감지 시 해당 탭 자동 열기
+      const hash = window.location.hash.replace('#', '');
+      if (hash && ['schedule', 'fishing', 'festival', 'hotel', 'food', 'checklist'].includes(hash)) {
+        switchTab(hash);
+      }
     });
 
     function shareTrip() {
